@@ -21,8 +21,8 @@ npm 版 `dsh-redteam-mode` **不随包分发工具安装脚本与 9 份攻击链
 WebShell / 反弹 Shell / 横向移动 / 未授权利用）。原因：npm 的发布期自动审查会把
 "包在安装后自动下载渗透二进制"判定为恶意行为特征，整包会被 Blocked。
 
-- **有** `$DSH_HOME/redteam/setup.sh`（自行取过工具箱、或非 npm 安装）→ 按下面第一、二节走；
-- **没有**（`redteam_preflight` 返回里 `onboarding.setup_script.exists=false`）→ 先去项目
+- **有** `$DSH_HOME/redteam/setup.sh`（自行取过工具箱、或非 npm 安装）-> 按下面第一、二节走；
+- **没有**（`redteam_preflight` 返回里 `onboarding.setup_script.exists=false`）-> 先去项目
   GitHub Release 下载 `dsh-redteam-mode-<版本>-toolkit.tar.gz`，解压后按其中 README
   **由用户自己执行**，再到第三节手动配 `FOFA_KEY` 与 VPS；
 - **都不要**也行：只用本包自带的 14 个侦察/检测向技能（`fofa-recon` / `active-scan` /
@@ -34,7 +34,7 @@ WebShell / 反弹 Shell / 横向移动 / 未授权利用）。原因：npm 的�
 
 | 要什么 | 为什么必须 | 给到哪 | 没有会怎样 |
 | --- | --- | --- | --- |
-| **FOFA_KEY** | 资产测绘（`fofa-recon`）靠它铺开单位互联网资产面；没有就只能靠 crt.sh + 子域枚举，**边缘资产与未备案资产会大量漏掉** | 环境变量 `FOFA_KEY`，或写进 `$DSH_HOME/.env`（脚本会代写） | 测绘能力降级：找不全资产 → 后面四个阶段都受影响 |
+| **FOFA_KEY** | 资产测绘（`fofa-recon`）靠它铺开单位互联网资产面；没有就只能靠 crt.sh + 子域枚举，**边缘资产与未备案资产会大量漏掉** | 环境变量 `FOFA_KEY`，或写进 `$DSH_HOME/.env`（脚本会代写） | 测绘能力降级：找不全资产 -> 后面四个阶段都受影响 |
 | **VPS 登录方式**（`user@ip` + 私钥路径） | 反弹 Shell 必须落到**公网可控主机**上；载荷投递、隧道中转也依赖它 | `REDTEAM_VPS_HOST`（`用户@主机`）/ `REDTEAM_VPS_KEY`（私钥路径，默认 `$DSH_HOME/redteam/toolkit/vps/id_rsa`） | 拿不到服务器权限、投递不了载荷、进不了内网 |
 | （可选）测绘平台 key | Quake / Hunter / ZoomEye 与 FOFA 结果差异大，交叉能多找出资产 | 环境变量，按需 | 少一路交叉验证 |
 | （可选）允许 apt 安装 | 补系统工具 | 用户自己执行 `sudo apt install …` | 相关技能降级 |
@@ -45,7 +45,7 @@ WebShell / 反弹 Shell / 横向移动 / 未授权利用）。原因：npm 的�
 写进 `$DSH_HOME/.env`（脚本已 `chmod 600`）即可。
 
 ### FOFA_KEY 怎么拿（要能指导用户）
-1. 登录 <https://fofa.info> → 右上角头像 → **个人中心 → API Key**；
+1. 登录 <https://fofa.info> -> 右上角头像 -> **个人中心 -> API Key**；
 2. 个人版限额：10,000 次查询/月、1 秒 1 次并发（**脚本与技能都按 1 秒 1 次限速，不要调高**，超了会触发 45012 封禁）；
 3. 拿到后可以自测：`curl -s "https://fofa.info/api/v1/info/my?key=<KEY>"` —— 返回 `"error":false` 即有效。
 

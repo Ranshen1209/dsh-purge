@@ -145,8 +145,8 @@ john --show hashes.txt
    - `username`、**明文写 `secret_value`**（面板直接显示，便于随时复用）、`source`（`弱口令`/`默认口令`/`凭据复用`/`泄露`/`离线破解`）、
      `tool`（实际命令原文，如 `hydra -L users.txt -P pass.txt ssh://10.0.0.5 -t 4 -f`）、`secret_ref`（证据文件路径如 `runs/hydra-ssh-10.0.0.5.txt`）。
 2. **必须实测登录才记分**：Web 后台用 `browser-automation` / `kimi-webbridge` 真实登录一次
-   （打开登录页 → 填账号口令 → 确认进入后台 → 记页面标题/菜单/当前用户名 → 抓 Cookie 存证据）→
-   `redteam_access_add`（`method=web-login`）→ `redteam_score_hit`（`web-app` 10 分 / `web-app` 20 分，
+   （打开登录页 -> 填账号口令 -> 确认进入后台 -> 记页面标题/菜单/当前用户名 -> 抓 Cookie 存证据）->
+   `redteam_access_add`（`method=web-login`）-> `redteam_score_hit`（`web-app` 10 分 / `web-app` 20 分，
    `evidence` 写「资产｜后台管理员 tomcat/Tomcat@2024」）。
    **登不进去就在 `redteam_asset_test` 的 `test` 里记一行卡点**（哈希未破解/需二次认证/限制来源 IP/账号已禁用），不记分。
 3. **账号权限按服务封顶**：同一资产同一端口只算一次分，拿到管理员即该服务拿满——不要在同一服务上刷多个账号。

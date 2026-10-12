@@ -34,9 +34,9 @@ export function hasAnchoredReasoning(content) {
 }
 
 /**
- * a) 用过工具且锚住，或已经走满 maxBootstrapSteps → 放开；
- * b) 用过工具，这一轮结束，且 promoteAfterFirstResponse → 放开；
- * c) 没有工具调用但已经回答，且 promoteAfterFirstResponse → 放开。
+ * a) 用过工具且锚住，或已经走满 maxBootstrapSteps -> 放开；
+ * b) 用过工具，这一轮结束，且 promoteAfterFirstResponse -> 放开；
+ * c) 没有工具调用但已经回答，且 promoteAfterFirstResponse -> 放开。
  */
 export function decidePromotion(state, config) {
   if (state.toolCalled && config.anchorGate !== true) return true

@@ -24,8 +24,8 @@ enabled: true
 | 企业版 V2 | 5,000,000 次/月 | 50,000,000 条/月 | **1 秒 5 次** |
 
 ## 实测行为（实测验证）
-- 连续快速请求 → **HTTP 429**，响应体 `{"error":true,"errmsg":"[45012] 请求速度过快"}`
-- key 错误 → HTTP 200 + `{"error":true,"errmsg":"[-700] 账号无效"}`
+- 连续快速请求 -> **HTTP 429**，响应体 `{"error":true,"errmsg":"[45012] 请求速度过快"}`
+- key 错误 -> HTTP 200 + `{"error":true,"errmsg":"[-700] 账号无效"}`
 - 单页 `size` 到 1000 正常；请求间隔 ≥1 秒时连续请求均返回 200
 - 结论：**按 1 请求/秒 保守执行，绝不并发**；遇到 45012 必须退避，不要立即重试
 
@@ -113,7 +113,7 @@ def main():
                 break
             errmsg = str(data.get("errmsg", ""))
             if "45012" in errmsg or status == 429:
-                continue                      # 限速 → 退避重试
+                continue                      # 限速 -> 退避重试
             print(f"[stop] 不可重试错误 http={status} {errmsg}", file=sys.stderr)
             data = None
             break
@@ -145,7 +145,7 @@ def main():
     with open(out, "w", encoding="utf-8") as f:
         for row in rows:
             f.write(json.dumps(row, ensure_ascii=False) + "\n")
-    print(f"[done] {len(rows)} 条资产 → {out}（共 {requests_made} 次请求）", file=sys.stderr)
+    print(f"[done] {len(rows)} 条资产 -> {out}（共 {requests_made} 次请求）", file=sys.stderr)
     return 0
 
 

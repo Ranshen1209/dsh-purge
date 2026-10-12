@@ -45,6 +45,6 @@ writeFileSync(outFile, rep.markdown, "utf8");
 store.close();
 
 const imgs = (rep.markdown.match(/!\[[^\]]*\]\([^)]+\)/g) || []).length;
-console.log("✓ 报告：" + outFile);
-console.log("  合计 " + rep.summary.points + " 分 · " + rep.items.length + " 条正文 · 嵌入截图 " + imgs + " 张"
+console.log("报告：" + outFile);
+console.log("  合计 " + rep.summary.points + " 分 | " + rep.items.length + " 条正文 | 嵌入截图 " + imgs + " 张"
   + (existsSync(shotsDst) ? "（shots/ " + readdirSync(shotsDst).length + " 个文件，随报告一起拷走即可）" : ""));

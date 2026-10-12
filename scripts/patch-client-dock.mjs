@@ -326,7 +326,7 @@ const dockBlock = `
 							role: "tab",
 							"aria-selected": st.tab === "drill" ? "true" : "false",
 							onClick: () => onTab("drill"),
-						}, t("dock.drill") + (readDrillAuth() ? "" : " · " + t("dock.unauthorized"))),
+						}, t("dock.drill") + (readDrillAuth() ? "" : " | " + t("dock.unauthorized"))),
 					),
 					h("div", { className: "dshp-dock-body" }, body),
 				),

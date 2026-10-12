@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# ─────────────────────────────────────────────────────────────────────────────
 # 红队模式一键铺环境 —— 首次使用跑这一条就够
 #
 #   bash $DSH_HOME/redteam/setup.sh            # 交互式引导（推荐）
@@ -7,17 +6,16 @@
 #   bash $DSH_HOME/redteam/setup.sh --check    # 只体检不安装（CI / 排障用）
 #
 # 做四件事：
-#   ① 装工具：把红队技能用到的二进制补齐到 $DSH_HOME/redteam/toolkit/
-#   ② 装技能：确认技能目录存在且可见（技能随包分发，这里只做体检与提示）
-#   ③ 收配置：引导用户提供 FOFA_KEY（测绘）与 VPS 登录方式（反弹 Shell 落地）
-#   ④ 验通道：实测载荷服务、模板库、二进制可执行性，最后写完成标记
+#   1 装工具：把红队技能用到的二进制补齐到 $DSH_HOME/redteam/toolkit/
+#   2 装技能：确认技能目录存在且可见（技能随包分发，这里只做体检与提示）
+#   3 收配置：引导用户提供 FOFA_KEY（测绘）与 VPS 登录方式（反弹 Shell 落地）
+#   4 验通道：实测载荷服务、模板库、二进制可执行性，最后写完成标记
 #
 # 设计原则：
-#   · **幂等**：随时可重跑，已装的不重装（带 --force 才强制重下）
-#   · **零依赖**：只用 curl / python3 / tar / unzip，Node 也不需要
-#   · **不猜 URL**：一律走 GitHub releases/latest API 拿真实资产
-#   · **不静默失败**：每一步都打印结论，最后给一份体检表
-# ─────────────────────────────────────────────────────────────────────────────
+#   - **幂等**：随时可重跑，已装的不重装（带 --force 才强制重下）
+#   - **零依赖**：只用 curl / python3 / tar / unzip，Node 也不需要
+#   - **不猜 URL**：一律走 GitHub releases/latest API 拿真实资产
+#   - **不静默失败**：每一步都打印结论，最后给一份体检表
 set -uo pipefail
 
 DSH_HOME="${DSH_HOME:-$HOME/.dsh}"
@@ -41,26 +39,26 @@ done
 
 mkdir -p "$TK" "$LOG_DIR"
 
-# ── 输出工具 ────────────────────────────────────────────────────────────────
+# 输出工具
 C_OK=$'\033[32m'; C_WARN=$'\033[33m'; C_ERR=$'\033[31m'; C_DIM=$'\033[2m'; C_OFF=$'\033[0m'
 say()  { printf '%s\n' "$*" | tee -a "$LOG"; }
 
 # 运行环境提醒：本脚本会往本机落 VPS 私钥、WebShell 马与扫描器，只应在演练专用环境里跑
 if [ -z "${REDTEAM_NO_VM_WARN:-}" ]; then
   say ""
-  say "⚠️  请在【专供演练的 Kali 虚拟机】里运行红队模式，不要跑在日常办公电脑/宿主机上："
-  say "    · 本机会落 VPS 私钥、冰蝎/哥斯拉马与各类扫描器，安全软件/EDR 拦查会误伤日常环境；"
-  say "    · 扫描与爆破流量会从你常用出口 IP 出去，影响正常上网与 IP 信誉；"
-  say "    · 演练结束直接丢弃虚拟机最干净。（设置 REDTEAM_NO_VM_WARN=1 可跳过本提示）"
+  say "注意：请在【专供演练的 Kali 虚拟机】里运行红队模式，不要跑在日常办公电脑/宿主机上："
+  say "    - 本机会落 VPS 私钥、冰蝎/哥斯拉马与各类扫描器，安全软件/EDR 拦查会误伤日常环境；"
+  say "    - 扫描与爆破流量会从你常用出口 IP 出去，影响正常上网与 IP 信誉；"
+  say "    - 演练结束直接丢弃虚拟机最干净。（设置 REDTEAM_NO_VM_WARN=1 可跳过本提示）"
   say ""
 fi
-ok()   { say "  ${C_OK}✓${C_OFF} $*"; }
-warn() { say "  ${C_WARN}!${C_OFF} $*"; }
-bad()  { say "  ${C_ERR}✗${C_OFF} $*"; }
+ok()   { say "  ${C_OK}通过${C_OFF} $*"; }
+warn() { say "  ${C_WARN}注意${C_OFF} $*"; }
+bad()  { say "  ${C_ERR}失败${C_OFF} $*"; }
 dim()  { say "  ${C_DIM}$*${C_OFF}"; }
-head_() { say ""; say "── $* ──────────────────────────────────────────"; }
+head_() { say ""; say " $* "; }
 
-ask() { # ask <提示> <默认值>  → 回显用户输入（无 tty 或 --yes 时用默认值）
+ask() { # ask <提示> <默认值>  -> 回显用户输入（无 tty 或 --yes 时用默认值）
   local prompt="$1" def="${2:-}"
   if [ "$ASSUME_YES" = 1 ] || [ ! -t 0 ]; then printf '%s' "$def"; return; fi
   local ans
@@ -81,10 +79,10 @@ ask_secret() { # 不回显读取
   printf '%s' "$ans"
 }
 
-# ── 工具函数 ────────────────────────────────────────────────────────────────
+# 工具函数
 have() { command -v "$1" >/dev/null 2>&1; }
 
-gh_api() { # gh_api <repo> → 输出 releases/latest JSON（有 gh token 就用，配额高）
+gh_api() { # gh_api <repo> -> 输出 releases/latest JSON（有 gh token 就用，配额高）
   local repo="$1" tok=""
   have gh && tok="$(gh auth token 2>/dev/null || true)"
   if [ -n "$tok" ]; then
@@ -127,13 +125,13 @@ for a in j.get('assets') or []:
       rm -f "$out"; return 1
     fi
     [ "$chmod_x" = 1 ] && chmod +x "$out" 2>/dev/null
-    ok "$name → $out（$got 字节，与官方一致）"
+    ok "$name -> $out（$got 字节，与官方一致）"
   else
     bad "$name 下载失败（curl 退出码 $?）"; return 1
   fi
 }
 
-untar_all() { # untar_all <tarfile> <目录> <期望的二进制名...> → 全解压后摊平到 <目录>/
+untar_all() { # untar_all <tarfile> <目录> <期望的二进制名...> -> 全解压后摊平到 <目录>/
   local tf="$1" dir="$2"; shift 2
   ( cd "$dir" && tar xzf "$tf" 2>/dev/null ) || { bad "$(basename "$tf") 解压失败"; return 1; }
   local name found sz
@@ -156,7 +154,7 @@ untar_all() { # untar_all <tarfile> <目录> <期望的二进制名...> → 全�
   done
 }
 
-verify_bin() { # verify_bin <路径> → 能跑起来返回 0（截断的二进制在这里就被挡住）
+verify_bin() { # verify_bin <路径> -> 能跑起来返回 0（截断的二进制在这里就被挡住）
   local p="$1"
   [ -x "$p" ] || return 1
   timeout 15 "$p" --version >/dev/null 2>&1 && return 0
@@ -167,10 +165,10 @@ verify_bin() { # verify_bin <路径> → 能跑起来返回 0（截断的二进�
   return 1
 }
 
-# 安装前体检：文件在但跑不起来（截断/缺依赖）→ 删掉，让下面的安装分支重新下载。
+# 安装前体检：文件在但跑不起来（截断/缺依赖）-> 删掉，让下面的安装分支重新下载。
 # 为什么必须这样：先前只判"文件是否可执行"，一个被截断的二进制（文件在、权限也对、
 # 运行却零输出）会一直留在盘上；而脚本还提示"重跑加 --force"，实际 --force 又不重下，
-# 提示与行为不一致 → 用户按提示做也修不好。改成"坏文件自动清掉再装"，重跑一次即自愈。
+# 提示与行为不一致 -> 用户按提示做也修不好。改成"坏文件自动清掉再装"，重跑一次即自愈。
 doctor() { # doctor <路径> <名字>
   if [ -e "$1" ] && ! verify_bin "$1"; then
     warn "$2 已损坏或截断（跑不起来），删除后重新下载"
@@ -178,13 +176,12 @@ doctor() { # doctor <路径> <名字>
   fi
 }
 
-# ─────────────────────────────────────────────────────────────────────────────
 head_ "红队模式环境体检 $(date '+%F %T')"
 say "DSH_HOME = $DSH_HOME"
 say "工具箱   = $TK"
 
-# ═══ ① 工具安装 ════════════════════════════════════════════════════════════
-head_ "① 安装工具（缺失的才下）"
+# 1 工具安装
+head_ "1 安装工具（缺失的才下）"
 
 # --- 已在 PATH 的系统工具（Kali 自带，只体检） ---
 PATHD="nmap masscan nuclei sqlmap ffuf feroxbuster gobuster hydra john hashcat wpscan nikto whatweb amass theHarvester msfconsole searchsploit proxychains4 socat nc tmux"
@@ -299,8 +296,8 @@ else
   dim "--check 模式：跳过安装"
 fi
 
-# ═══ ② nuclei 模板 ═════════════════════════════════════════════════════════
-head_ "② nuclei 模板库"
+# 2 nuclei 模板
+head_ "2 nuclei 模板库"
 NT="$HOME/.local/nuclei-templates"
 if [ -d "$NT" ]; then
   NTC="$(find "$NT" -name '*.yaml' 2>/dev/null | wc -l | tr -d ' ')"
@@ -317,17 +314,17 @@ else
   warn "未安装 nuclei，跳过"
 fi
 
-# ═══ ③ 配置：FOFA_KEY 与 VPS ══════════════════════════════════════════════
-head_ "③ 配置（FOFA 测绘 key + VPS 登录方式）"
+# 3 配置：FOFA_KEY 与 VPS
+head_ "3 配置（FOFA 测绘 key + VPS 登录方式）"
 
 # 已有值（环境变量优先，其次 .env 文件）
-cur_env() { # cur_env <NAME> → 输出当前生效值（变量未设时不报错）
+cur_env() { # cur_env <NAME> -> 输出当前生效值（变量未设时不报错）
   local n="$1" v=""
   v="${!n-}"                                   # 必须带 - ：set -u 下未定义变量会直接中断
   [ -n "$v" ] && { printf '%s' "$v"; return; }
   [ -f "$ENV_FILE" ] && grep -E "^${n}=" "$ENV_FILE" 2>/dev/null | tail -1 | cut -d= -f2- | tr -d '"'
 }
-env_set() { # env_set <NAME> <VALUE> → 写/更新 $DSH_HOME/.env，权限 600
+env_set() { # env_set <NAME> <VALUE> -> 写/更新 $DSH_HOME/.env，权限 600
   local n="$1" v="$2"
   mkdir -p "$(dirname "$ENV_FILE")"; touch "$ENV_FILE"; chmod 600 "$ENV_FILE"
   if grep -qE "^${n}=" "$ENV_FILE" 2>/dev/null; then
@@ -360,7 +357,7 @@ if [ -n "$FOFA_NOW" ]; then
   fi
 else
   warn "FOFA_KEY 未配置 —— 资产测绘（fofa-recon 技能）将降级"
-  dim "获取：https://fofa.info 登录 → 个人中心 → API Key（个人版 10,000 次/月，1 秒 1 次）"
+  dim "获取：https://fofa.info 登录 -> 个人中心 -> API Key（个人版 10,000 次/月，1 秒 1 次）"
   dim "降级替代：crt.sh 证书透明 + subfinder/ksubdomain + 被动 DNS（技能 passive-recon / recon-pipeline）"
   if [ "$CHECK_ONLY" != 1 ]; then
     NEW="$(ask_secret '粘贴 FOFA_KEY（留空则跳过，稍后可用 setup.sh 再配）')"
@@ -432,8 +429,8 @@ if [ ! -f "$ENV_FILE" ] || ! grep -q 'FOFA_KEY' "$ENV_FILE" 2>/dev/null; then
   dim "提示：$ENV_FILE 由 dsh web 启动时加载；改完需重启 dsh web 才在本进程生效"
 fi
 
-# ═══ ④ 体检表 ══════════════════════════════════════════════════════════════
-head_ "④ 体检（二进制可执行性）"
+# 4 体检表
+head_ "4 体检（二进制可执行性）"
 FAILED=""; WEAK=""
 for name in "${!BIN[@]}"; do
   p="${BIN[$name]}"
@@ -453,7 +450,7 @@ done
 [ -d "$TK/Godzilla" ] && ok "Godzilla 哥斯拉（WebShell 交付）" || warn "Godzilla 未就位"
 [ -d "$TK/AntSword" ] && ok "AntSword 蚁剑" || dim "AntSword 未就位（可选）"
 
-# ═══ ⑤ 完成标记 ════════════════════════════════════════════════════════════
+# 5 完成标记
 head_ "总结"
 if [ -n "$FAILED" ]; then
   warn "以下工具缺失，相关技能会降级：$FAILED"

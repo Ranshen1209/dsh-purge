@@ -165,7 +165,7 @@ window.__ModuleLoader__.load({ id: "dsh-purge", factory: (require) => {
 			"envGate.lead": "红队模式发送前需要本机工具。未检测到可用环境时，先去环境适配，或确认暂不配置。",
 			"envGate.kaliHint": "检测到 Kali 时会直接用本机工具，不必填路径。没有 Kali 时，在环境适配里填写各工具路径，或选一个整包文件夹自动分配。",
 			"envGate.skip": "暂不配置",
-			"envGate.skipConfirm": "确认后这次可以继续对话。扫描和利用类技能仍会因为缺少工具而不可用，之后可以在 dsh-purge → 环境适配里补路径。",
+			"envGate.skipConfirm": "确认后这次可以继续对话。扫描和利用类技能仍会因为缺少工具而不可用，之后可以在 dsh-purge -> 环境适配里补路径。",
 			"envGate.skipNo": "返回",
 			"envGate.skipYes": "确认暂不配置",
 			"envGate.go": "去环境适配",
@@ -351,18 +351,18 @@ window.__ModuleLoader__.load({ id: "dsh-purge", factory: (require) => {
 			"group.tools": "工具",
 			"group.compat": "0.1.5 兼容",
 			"group.dsh20": "0.2.0",
-			"patch.1": "全局免责 → 强指令",
-			"patch.2": "替换式免责 → 强指令",
-			"patch.3": "作用域免责 → 强指令",
+			"patch.1": "全局免责 -> 强指令",
+			"patch.2": "替换式免责 -> 强指令",
+			"patch.3": "作用域免责 -> 强指令",
 			"patch.4": "persona 会话强指令",
-			"patch.5": "审批提示句 → 全权限",
-			"patch.6": "沙箱 deny → allow 写",
+			"patch.5": "审批提示句 -> 全权限",
+			"patch.6": "沙箱 deny -> allow 写",
 			"patch.7": "沙箱默认全权限",
 			"patch.8": "审批默认 never",
 			"patch.9": "审批门自动放行",
 			"patch.10": "审批配置默认 never",
-			"patch.11": "never 提示句 → 自动放行",
-			"patch.12": "ask 提示句 → 自动放行",
+			"patch.11": "never 提示句 -> 自动放行",
+			"patch.12": "ask 提示句 -> 自动放行",
 			"patch.13": "豁免升级阶梯",
 			"patch.14": "升级无条件授信",
 			"patch.15": "沙箱 confine 直通",
@@ -372,23 +372,23 @@ window.__ModuleLoader__.load({ id: "dsh-purge", factory: (require) => {
 			"patch.19": "工具结果修剪禁用",
 			"patch.21": "恢复插件延长的 bash 等待",
 			"patch.22": "read 上限放宽",
-			"patch.23": "子代理深度 3 → 10",
+			"patch.23": "子代理深度 3 -> 10",
 			"patch.24": "preset fetch 启用",
 			"patch.25": "去掉官方默认身份（功能提示词不动）",
 			"patch.26": "minimal：去掉默认身份并打开 inject",
 			"patch.28": "dsh-liangshen（梁神）：phase-1 保留 dsh-purge / dshpg 段",
 			"patch.70": "极简模式终端不再禁止网络",
 			"patch.71": "梁神去掉官方身份句",
-			"patch.29": "dsh-tool-web：外部 untrusted 拦截→可执行",
-			"patch.30": "dsh-hooks-claude-code：deny→allow",
-			"patch.31": "dsh-hooks-codex：deny→allow",
+			"patch.29": "dsh-tool-web：外部 untrusted 拦截->可执行",
+			"patch.30": "dsh-hooks-claude-code：deny->allow",
+			"patch.31": "dsh-hooks-codex：deny->allow",
 			"patch.32": "Web 表面身份中性化",
-			"patch.33": "Shell 拒绝提示 → 可执行",
+			"patch.33": "Shell 拒绝提示 -> 可执行",
 			"patch.34": "沙箱提示中性化",
 			"patch.35": "升级 never 不拒",
 			"patch.36": "文件系统升级 schema 放行",
 			"patch.37": "子代理 scope lock 中性化",
-			"patch.38": "persona text→prefix（0.1.2 预设）",
+			"patch.38": "persona text->prefix（0.1.2 预设）",
 			"patch.39": "会话 v0 plugin summary（mnemon）",
 			"patch.40": "complete 预设仍保留注入",
 			"patch.42": "设置页旧接口",
@@ -505,7 +505,7 @@ window.__ModuleLoader__.load({ id: "dsh-purge", factory: (require) => {
 			"envGate.lead": "Red team mode needs local tools before you send. If none are available, open Env adapt or confirm you will continue without them.",
 			"envGate.kaliHint": "When Kali is detected, local tools are used directly and paths are optional. Otherwise set each tool path in Env adapt, or pick one toolkit folder to assign them.",
 			"envGate.skip": "Skip for now",
-			"envGate.skipConfirm": "You can keep chatting after this. Scan and exploit skills stay unavailable until the tools are installed. You can add paths later under dsh-purge → Env adapt.",
+			"envGate.skipConfirm": "You can keep chatting after this. Scan and exploit skills stay unavailable until the tools are installed. You can add paths later under dsh-purge -> Env adapt.",
 			"envGate.skipNo": "Back",
 			"envGate.skipYes": "Continue without tools",
 			"envGate.go": "Open Env adapt",
@@ -691,18 +691,18 @@ window.__ModuleLoader__.load({ id: "dsh-purge", factory: (require) => {
 			"group.tools": "Tools",
 			"group.compat": "0.1.5 compat",
 			"group.dsh20": "0.2.0",
-			"patch.1": "Global disclaimer → mandate",
-			"patch.2": "Replacement disclaimer → mandate",
-			"patch.3": "Scope disclaimer → mandate",
+			"patch.1": "Global disclaimer -> mandate",
+			"patch.2": "Replacement disclaimer -> mandate",
+			"patch.3": "Scope disclaimer -> mandate",
 			"patch.4": "Persona session mandate",
-			"patch.5": "Approval copy → full access",
-			"patch.6": "Sandbox deny → allow write",
+			"patch.5": "Approval copy -> full access",
+			"patch.6": "Sandbox deny -> allow write",
 			"patch.7": "Sandbox default full access",
 			"patch.8": "Approval default never",
 			"patch.9": "Approval gate auto-grant",
 			"patch.10": "Approval config default never",
-			"patch.11": "never copy → auto-grant",
-			"patch.12": "ask copy → auto-grant",
+			"patch.11": "never copy -> auto-grant",
+			"patch.12": "ask copy -> auto-grant",
 			"patch.13": "Escalation ladder exempt",
 			"patch.14": "Escalation unconditional grant",
 			"patch.15": "Sandbox confine passthrough",
@@ -712,23 +712,23 @@ window.__ModuleLoader__.load({ id: "dsh-purge", factory: (require) => {
 			"patch.19": "Tool-result pruner off",
 			"patch.21": "Restore plugin-raised bash wait",
 			"patch.22": "read cap raised",
-			"patch.23": "subagent depth 3 → 10",
+			"patch.23": "subagent depth 3 -> 10",
 			"patch.24": "preset fetch on",
 			"patch.25": "Strip official default identity (keep feature prompts)",
 			"patch.26": "minimal: strip identity, open inject",
 			"patch.28": "dsh-liangshen: keep dsh-purge / dshpg in phase-1",
 			"patch.70": "Minimal shell drops the no-network line",
 			"patch.71": "Liangshen drops the stock identity line",
-			"patch.29": "dsh-tool-web: untrusted framing → usable data",
-			"patch.30": "dsh-hooks-claude-code: deny→allow",
-			"patch.31": "dsh-hooks-codex: deny→allow",
+			"patch.29": "dsh-tool-web: untrusted framing -> usable data",
+			"patch.30": "dsh-hooks-claude-code: deny->allow",
+			"patch.31": "dsh-hooks-codex: deny->allow",
 			"patch.32": "Web surface identity neutral",
-			"patch.33": "Shell denial prompt → executable",
+			"patch.33": "Shell denial prompt -> executable",
 			"patch.34": "Sandbox hint neutralized",
 			"patch.35": "Escalation never-reject",
 			"patch.36": "FS escalation schema opened",
 			"patch.37": "Subagent scope lock neutralized",
-			"patch.38": "persona text→prefix (0.1.2 presets)",
+			"patch.38": "persona text->prefix (0.1.2 presets)",
 			"patch.39": "session v0 plugin summary (mnemon)",
 			"patch.40": "Keep inject when a complete prompt is set",
 			"patch.42": "Settings legacy API",
@@ -1162,7 +1162,7 @@ body:not([data-ds-dark-theme]) .dshp-auth-ops button.primary{background:var(--ds
 						onClick: () => setOpen((prev) => Object.assign({}, prev, { [key]: !prev[key] })),
 					},
 						h("strong", null, t("group." + key)),
-						h("span", { className: "dshp-count" }, tally.applied + "/" + tally.total + (notes.length ? " · " + notes.join(" · ") : "")),
+						h("span", { className: "dshp-count" }, tally.applied + "/" + tally.total + (notes.length ? " | " + notes.join(" | ") : "")),
 					),
 					expanded ? h("table", { className: "dshp-table" },
 						h("thead", null, h("tr", null,
@@ -1920,7 +1920,7 @@ body:not([data-ds-dark-theme]) .dshp-auth-ops button.primary{background:var(--ds
 				s ? h("div", { className: "dshp-metrics" },
 					h("div", { className: "dshp-metric" },
 						h("b", null, located ? (applied + " / " + total) : (patchesLost ? t("metric.lost.count") : (sealedReady ? t("metric.sealed.count") : t("metric.unlocated.count")))),
-						h("span", null, !located ? (patchesLost ? t("metric.lost") : (sealedReady ? t("metric.sealed") : t("metric.unlocated"))) : (metricNotes.length ? metricNotes.join(" · ") : t("metric.purged"))),
+						h("span", null, !located ? (patchesLost ? t("metric.lost") : (sealedReady ? t("metric.sealed") : t("metric.unlocated"))) : (metricNotes.length ? metricNotes.join(" | ") : t("metric.purged"))),
 					),
 					h("div", { className: "dshp-metric" },
 						h("b", { style: { fontSize: 13, fontFamily: "var(--dshp-mono)", fontWeight: 500 } },
@@ -2148,7 +2148,7 @@ body:not([data-ds-dark-theme]) .dshp-auth-ops button.primary{background:var(--ds
 								ruleLabel(r),
 								isActive ? h("span", { className: "dshp-pill is-ok" }, t("pill.current")) : null,
 							),
-							h("span", { className: "dshp-rule-meta" }, r.target + " · " + formatSize(r.size)),
+							h("span", { className: "dshp-rule-meta" }, r.target + " | " + formatSize(r.size)),
 						),
 						h("div", { className: "dshp-rule-ops" },
 							h(Btn, {
@@ -2388,8 +2388,8 @@ body:not([data-ds-dark-theme]) .dshp-auth-ops button.primary{background:var(--ds
 		function versionChoiceLabel(item, tr) {
 			const ver = String((item && item.version) || "").replace(/^v/i, "");
 			const base = ver ? ("v" + ver) : ((item && (item.label || item.ref)) || "—");
-			if (item && item.current) return base + " · " + tr("update.current");
-			if (item && item.latest) return base + " · " + tr("update.tip");
+			if (item && item.current) return base + " | " + tr("update.current");
+			if (item && item.latest) return base + " | " + tr("update.tip");
 			return base;
 		}
 
@@ -2572,13 +2572,13 @@ body:not([data-ds-dark-theme]) .dshp-auth-ops button.primary{background:var(--ds
 						h("div", { className: "dshp-rule-main" },
 							h("span", { className: "dshp-rule-name" }, item.id),
 							h("span", { className: "dshp-rule-meta" },
-								(item.valid ? item.description : t("skills.invalid")) + " · " + formatSize(item.size),
+								(item.valid ? item.description : t("skills.invalid")) + " | " + formatSize(item.size),
 							),
 							item.valid ? h("span", { className: "dshp-rule-meta" },
 								[
 									item.userInvocable ? t("skills.call.slash", { cmd: "/" + item.id }) : t("skills.call.userOff"),
 									item.modelInvocable ? t("skills.call.model") : t("skills.call.modelOff"),
-								].join(" · "),
+								].join(" | "),
 							) : null,
 						),
 						h("div", { className: "dshp-rule-ops" },
@@ -3610,7 +3610,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
   font-size:12px;font-weight:600;border-top:1px solid var(--dsw-alias-border-l1);background:var(--dsw-alias-bg-layer-2)}
 .rt-score-group:first-child{border-top:none}
 .rt-score-group .rt-sg-sub{font-weight:400;font-size:11px;color:var(--dsw-alias-label-secondary)}
-/* ── 会话与入口：每张卡片分「标题行 / 关键事实 / 可用命令 / 备注」四段，避免一行糊在一起 ── */
+/* 会话与入口：每张卡片分「标题行 / 关键事实 / 可用命令 / 备注」四段，避免一行糊在一起 */
 .rt-sess-facts{display:flex;flex-direction:column;gap:2px;margin-top:5px}
 .rt-sess-fact{display:flex;gap:6px;font-size:11.5px;line-height:1.5}
 .rt-sess-fact>b{flex:none;min-width:62px;font-weight:600;color:var(--dsw-alias-label-secondary)}
@@ -3760,12 +3760,12 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
 .rt-subtab{padding:4px 10px;border-radius:6px 6px 0 0;cursor:pointer;font-size:12px;color:var(--dsw-alias-label-secondary)}
 .rt-subtab.on{color:var(--dsw-alias-label-primary);background:var(--dsw-alias-bg-layer-2);font-weight:600}
 .rt-sevbar{width:3px;border-radius:2px;align-self:stretch;flex:none;margin-right:2px}
-/* ── 折叠层次体系 ─────────────────────────────────────────────────────────────
+/* 折叠层次体系
    L1 折叠头 .rt-sec   ：通栏、无圆角无边框、左色条、深底 —— 永远是"扁"的
    L2 内容卡 .rt-atest/.rt-hit/.rt-cred/.rt-evi：内缩、有边框、圆角 —— 立起来
    L3 详情/长文本 .rt-clip-body / .rt-evi-body ：无边框、最浅、等宽
    L4 子项容器 .rt-sec-body：左缩进 + 竖引导线，表明"属于上面那个头"
-   ──────────────────────────────────────────────────────────────────────────── */
+ */
 .rt-sec-wrap{margin:0}
 .rt-sec{display:flex;align-items:center;gap:8px;padding:7px 12px 7px 9px;cursor:pointer;
   background:var(--dsw-alias-bg-layer-2);border-left:3px solid var(--dsw-alias-border-l2);
@@ -3854,7 +3854,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
 .rt-rep-req-head{display:flex;align-items:center;gap:7px;padding:4px 8px;font-size:11.5px;font-weight:600;
   background:var(--dsw-alias-bg-layer-1);border-bottom:1px solid var(--dsw-alias-border-l1)}
 .rt-rep-http{margin:0;padding:8px 10px;font-family:ui-monospace,Menlo,monospace;font-size:11.5px;line-height:1.6;white-space:pre-wrap;word-break:break-word;max-height:240px;overflow:auto;background:var(--dsw-alias-bg-base)}
-/* ── 报告里的「这一步怎么来的」：动作步骤 / 命令 / 凭据 / 隧道 ───────────── */
+/* 报告里的「这一步怎么来的」：动作步骤 / 命令 / 凭据 / 隧道 */
 .rt-rep-trace{margin-top:8px;border:1px solid var(--dsw-alias-border-l1);border-radius:7px;padding:8px 10px;
   background:var(--dsw-alias-bg-base)}
 .rt-rep-trace-head{display:flex;align-items:center;gap:7px;margin-bottom:5px}
@@ -3872,7 +3872,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
 .rt-rep-step-result{font-size:11.5px;margin-top:3px;word-break:break-word}
 .rt-rep-src{margin-top:6px;padding-top:6px;border-top:1px dashed var(--dsw-alias-border-l1)}
 .rt-rep-src-title{font-weight:600;font-size:12px;margin-bottom:3px}
-/* ── 全链路攻击路径图 ─────────────────────────────────────────────── */
+/* 全链路攻击路径图 */
 .rt-ap{padding:10px 12px 18px;overflow:auto}
 .rt-ap-stage{margin-bottom:2px}
 .rt-ap-head{display:flex;align-items:center;gap:8px;padding:7px 10px;background:var(--dsw-alias-bg-layer-2);
@@ -3965,7 +3965,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
 /* 折叠后仍要能一眼看到"这一阶段拿了多少分"，所以分数留在头上 */
 .rt-rep-pts{font-size:11px;font-weight:600;padding:1px 6px;border-radius:5px;border:1px solid transparent;flex:none}
 .rt-rep-body{padding-left:6px}
-/* ── 知识库（POC/EXP） ──────────────────────────────────────────── */
+/* 知识库（POC/EXP） */
 .rt-kb-filter{display:flex;align-items:center;gap:7px;padding:8px 10px;border-bottom:1px solid var(--dsw-alias-border-l1)}
 /* 知识库归类总览：一行标签，点一下按该类筛选 */
 .rt-kb-cats{display:flex;flex-wrap:wrap;gap:6px;padding:8px 10px;border-bottom:1px solid var(--dsw-alias-border-l1)}
@@ -4085,7 +4085,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
       privesc: '提权 / 横向', tunnel: '隧道 / 代理', other: '其它',
     }
     const POC_CAT_ORDER = Object.keys(POC_CAT_NAME)
-    /* 角色 code → 中文（报告/知识库都要标"谁发现的"） */
+    /* 角色 code -> 中文（报告/知识库都要标"谁发现的"） */
     const ROLE_LABEL = {
       plan: '主会话（指挥）', recon: '信息收集', assess: '资产梳理',
       'vuln-scan': '漏洞发现', exploit: '漏洞利用', internal: '内网渗透',
@@ -4132,9 +4132,9 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
           ? h('div', { className: 'rt-shot-zoom', onClick: () => setZoom(false) },
               h('img', { src: src, alt: shot.label || '' }),
               h('div', { className: 'rt-shot-zoom-cap' }, (shot.label || shot.target || '')
-                + (card ? '　·　由当日记录生成（非现场截图）' : '')
-                + (shot.captured_at ? '　·　' + fmt(shot.captured_at) : '')
-                + '　·　点击任意处关闭'))
+                + (card ? '　-　由当日记录生成（非现场截图）' : '')
+                + (shot.captured_at ? '　-　' + fmt(shot.captured_at) : '')
+                + '　-　点击任意处关闭'))
           : null)
     }
     const ShotStrip = ({ eng, shots, total, title }) => {
@@ -4356,9 +4356,9 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
           onClick: () => { setView('list'); toggle() },
           onKeyDown: (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setView('list'); toggle(e) } },
         },
-          h('span', { className: 'rt-sec-caret' }, open ? '▾' : '▸'),
+          h('span', { className: 'rt-sec-caret' }, open ? '-' : '+'),
           h('span', { className: 'rt-scope rt-scope-' + kind }, kind === 'internal' ? '内网' : '外网'),
-          h('span', null, title + ' · ' + list.length + ' 个 C 段'),
+          h('span', null, title + ' | ' + list.length + ' 个 C 段'),
           h('span', { className: 'rt-spacer' }),
           h('span', { style: { fontWeight: 400 } }, list.reduce((n, x) => n + (x.assets || 0), 0) + ' 资产'))]
         if (!open) return out
@@ -4366,7 +4366,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
           /* 一段一行：只给 C 段 + 资产数（端口数不再占位，归属与存活放进悬浮提示） */
           out.push(h('div', Object.assign({
             key: s.cidr, className: 'rt-seg' + (cidr === s.cidr ? ' on' : ''),
-            title: (s.org || '未知归属') + ' · 存活 ' + (s.live || 0) + '/' + (s.assets || 0) + ' 台',
+            title: (s.org || '未知归属') + ' | 存活 ' + (s.live || 0) + '/' + (s.assets || 0) + ' 台',
           }, clickable(() => { setView('list'); setCidr(s.cidr) },
             { label: '筛选 C 段 ' + s.cidr, expanded: cidr === s.cidr && view !== 'testing' })),
             h('div', { className: 'rt-seg-cidr', style: { display: 'flex', alignItems: 'baseline', gap: 5 } },
@@ -4426,7 +4426,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
         h('button', { className: 'rt-btn' + (view === 'domain' ? ' rt-btn-primary' : ''), onClick: () => setView('domain') }, '域名'),
         h('button', { className: 'rt-btn' + (view === 'web' ? ' rt-btn-primary' : ''), onClick: () => setView('web') }, 'Web'))
 
-      /* ── 结论行：一屏看清家底，数字点一下就是筛选 ───────────────────── */
+ /* 结论行：一屏看清家底，数字点一下就是筛选 */
       const tests = (snapshot && snapshot.tests) || {}
       const snapStats = (snapshot && snapshot.stats) || {}
       const noFilter = !testStatus && !priority && !scope && !prov && !assetState && !cidr
@@ -4517,11 +4517,11 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
           for (const o of (d.observations || []).slice(0, 8)) {
             obsRows.push(h('div', { key: 'o' + (o.attr || '') + (o.value || '') + (o.collected_at || ''), className: 'rt-kv' },
               h('b', null, o.attr || '—'),
-              h('span', null, (o.value || '') + ' · ' + (o.tool || '未知工具') + ' · ' + fmt(o.collected_at)),
+              h('span', null, (o.value || '') + ' | ' + (o.tool || '未知工具') + ' | ' + fmt(o.collected_at)),
               h(ProvTag, { p: o.provenance })))
           }
         }
-        /* 详情分三层：3 行必读 → 「展开全部」后才是溯源、原始记录与备注全文 */
+        /* 详情分三层：3 行必读 -> 「展开全部」后才是溯源、原始记录与备注全文 */
         const all = showAll === it.id
         const noteLines = d && d.test_notes ? d.test_notes.split('\n').filter(Boolean) : []
         const inner = d
@@ -4531,7 +4531,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
                 h(TestTag, { s: d.test_status }),
                 d.blocked_count ? h('span', { className: 'rt-tag', style: { marginLeft: 6, color: '#ef4444', borderColor: '#ef444455' } }, '被封 ' + d.blocked_count + ' 次') : null,
                 h('span', { style: { marginLeft: 8, color: 'var(--dsw-alias-label-secondary)' } },
-                  (d.test_updated_at ? fmt(d.test_updated_at) : '未测过') + (d.test_updated_by ? ' · ' + d.test_updated_by : '')))),
+                  (d.test_updated_at ? fmt(d.test_updated_at) : '未测过') + (d.test_updated_by ? ' | ' + d.test_updated_by : '')))),
               h('div', { className: 'rt-kv' }, h('b', null, '易打性'), h('span', null,
                 h(PriTag, { p: d.priority }),
                 h('span', { style: { marginLeft: 8 } }, d.potential || '未评估'),
@@ -4542,7 +4542,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
                   d.scope === 'internal' ? '内网资产' : '外网资产') : null)),
               h('span', Object.assign({ className: 'rt-more' },
                 clickable(() => setShowAll(all ? null : it.id), { label: all ? '收起资产详情' : '展开资产详情', expanded: all })),
-                all ? '收起全部 ▲' : '展开全部（端口 · 指纹 · 采集溯源 · 测试记录）▼'),
+                all ? '收起全部' : '展开全部（端口 | 指纹 | 采集溯源 | 测试记录）'),
               all ? h('div', null,
                 h('div', { className: 'rt-kv' }, h('b', null, '主机名'), h('span', null, (d.names || []).map((n) => n.name).join(', ') || '—')),
                 h('div', { className: 'rt-kv' }, h('b', null, '发现时间'),
@@ -4551,11 +4551,11 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
                   h('b', { style: { minWidth: 0, marginLeft: 8 } }, '数据源首见'), h('span', null, fmt(d.first_seen))),
                 h('div', { className: 'rt-kv' }, h('b', null, 'C 段'), h('span', null, d.segment_cidr)),
                 h('div', { className: 'rt-kv' }, h('b', null, '易打性'), h('span', null,
-                  (d.priority || '未评估') + (d.potential ? ' · 预期：' + d.potential : '')
-                  + (d.assess_reason ? ' · 依据：' + d.assess_reason : '')
+                  (d.priority || '未评估') + (d.potential ? ' | 预期：' + d.potential : '')
+                  + (d.assess_reason ? ' | 依据：' + d.assess_reason : '')
                   + (d.assessed_at ? '（' + fmt(d.assessed_at) + '）' : ''))),
                 h('div', { className: 'rt-kv' }, h('b', null, '来源'), h('span', null,
-                  '被动端口 ' + (d.passive || 0) + ' · 主动端口 ' + (d.active || 0))),
+                  '被动端口 ' + (d.passive || 0) + ' | 主动端口 ' + (d.active || 0))),
                 h('div', { style: { margin: '6px 0 3px', fontWeight: 600 } }, '开放端口 / 服务'),
                 h('div', null, portRows.length ? portRows : '—'),
                 h('div', { style: { margin: '6px 0 3px', fontWeight: 600 } }, '指纹'),
@@ -4576,7 +4576,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
       const listPane = h('div', { className: 'rt-table' }, head, rowNodes,
         !state.loading && !state.items.length ? h('div', { className: 'rt-empty' }, '没有匹配的资产') : null)
 
-      /* 域名维度：域名 → 关联资产 */
+      /* 域名维度：域名 -> 关联资产 */
       const domainPane = h('div', { className: 'rt-table' },
         domains === null ? h('div', { className: 'rt-empty' }, '加载中…')
           : domains.length
@@ -4607,7 +4607,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
           },
             h('a', { className: 'rt-link rt-mono', href: url, target: '_blank', rel: 'noreferrer', title: url }, url),
             h('span', { title: w.title || '' }, w.title || '—'),
-            h('span', { className: 'rt-mono' }, w.ip + ' · ' + w.segment_cidr),
+            h('span', { className: 'rt-mono' }, w.ip + ' | ' + w.segment_cidr),
             h('span', { style: { fontSize: 11 } }, [w.service, w.product, w.version].filter(Boolean).join(' ')))
         }),
         web === null ? h('div', { className: 'rt-empty' }, '加载中…')
@@ -4631,7 +4631,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
     /* ---------------------------------------------------------- 资产发现时间线 */
     /**
      * 资产发现时间线：什么时候发现了什么、哪天收了多少。
-     * ⚠️ 这个组件曾在"移除图谱视图"时被连带删掉 —— 删除区间的结束标记选得太宽
+     * 注意：这个组件曾在"移除图谱视图"时被连带删掉 —— 删除区间的结束标记选得太宽
      *    （图谱画布的收尾与它挨着），bundle 自检的 "client.js 有资产「发现时间」视图"
      *    因此变红。恢复时把插入点固定成"资产测绘注释块之前"，避免再被别的删除波及。
      */
@@ -4655,9 +4655,9 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
         h('div', { className: 'rt-card' },
           h('h4', null, '资产发现时间线'),
           h('div', { style: { fontSize: 12, color: 'var(--dsw-alias-label-secondary)' } },
-            '共 ' + ((data.span && data.span.total) || 0) + ' 台 · 最早 '
+            '共 ' + ((data.span && data.span.total) || 0) + ' 台 | 最早 '
             + (data.span && data.span.first ? fmt(data.span.first) : '—')
-            + ' · 最近 ' + (data.span && data.span.last ? fmt(data.span.last) : '—')
+            + ' | 最近 ' + (data.span && data.span.last ? fmt(data.span.last) : '—')
             + '（发现时间 = 第一次进入资产库的时刻；重复采集只刷新"最近采集"）')),
         (data.days || []).length === 0 ? h('div', { className: 'rt-empty' }, '还没有资产。') : null,
         h('div', { className: 'rt-card' },
@@ -4672,7 +4672,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
             }, clickable(() => setDay(day === d.day ? '' : d.day),
               { label: '筛选 ' + d.day + ' 发现的资产', expanded: day === d.day })),
               h('div', { className: 'rt-seg-cidr' }, d.day),
-              h('div', { className: 'rt-seg-meta' }, d.assets + ' 台 · 内 ' + d.internal + ' / 外 ' + d.external))))),
+              h('div', { className: 'rt-seg-meta' }, d.assets + ' 台 | 内 ' + d.internal + ' / 外 ' + d.external))))),
         h('div', { className: 'rt-card' },
           h('h4', null, day ? day + ' 发现的资产（' + recent.length + '）' : '最近发现的资产（' + recent.length + '）'),
           recent.length === 0 ? h('div', { className: 'rt-empty' }, '这一天没有新增资产。') : null,
@@ -4683,7 +4683,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
               a.ip),
             h('span', { style: { minWidth: 132, fontSize: 11.5, color: 'var(--dsw-alias-label-secondary)' } },
               a.discovered_at ? fmt(a.discovered_at) : '时间未知'),
-            h('span', { style: { flex: 1 } }, (a.primary_name || '—') + (a.open_ports ? ' · ' + a.open_ports + ' 端口' : '')),
+            h('span', { style: { flex: 1 } }, (a.primary_name || '—') + (a.open_ports ? ' | ' + a.open_ports + ' 端口' : '')),
             h(PriTag, { p: a.priority })))))
     }
 
@@ -4847,10 +4847,10 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
           [s.source ? '来源 ' + s.source : null,
             s.fromPlugin ? '本插件自带' : null,
             s.provider ? s.provider : null,
-            s.dir ? s.dir : null].filter(Boolean).join(' · ')),
+            s.dir ? s.dir : null].filter(Boolean).join(' | ')),
         (s.problems || []).length > 0 && s.availability !== 'available' && s.library !== 'official'
           ? h('div', { className: 'rt-kb-sub', style: { color: 'var(--dsw-alias-state-warn-primary, #f59e0b)' } },
-              '⚠ ' + String(s.problems[0]).slice(0, 60))
+              '注意：' + String(s.problems[0]).slice(0, 60))
           : null))
       const redteamRows = filtered.filter((s) => s.library !== 'official').map(renderSkill)
       const officialRows = filtered.filter((s) => s.library === 'official').map(renderSkill)
@@ -4892,7 +4892,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
                 }, clickable(() => load(true), { label: '重新检查技能可用性' })), '重查可用性'))
             : null,
           h('div', { style: { fontSize: 11, color: 'var(--dsw-alias-label-secondary)', marginBottom: 6 } },
-            '红队 ' + ((meta.libraries && meta.libraries.redteam) || 0) + ' · 官方 ' + ((meta.libraries && meta.libraries.official) || 0),
+            '红队 ' + ((meta.libraries && meta.libraries.redteam) || 0) + ' | 官方 ' + ((meta.libraries && meta.libraries.official) || 0),
             items.length > 100 ? h('div', { style: { marginTop: 3 } },
               '（技能多来自其它插件注册的根或你自己的技能目录；本插件只自带 ' + (meta.fromPlugin || 0) + ' 个）') : null),
           listItems),
@@ -4924,12 +4924,12 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
                         avail === 'available' ? '可用' : avail === 'broken' ? '不可用（有明确缺口）' : '未知（正文读不到）')),
                     (s2.problems || []).length > 0
                       ? h('div', { className: 'rt-kv' }, h('b', null, avail === 'available' ? '未装上的外部工具' : '缺口'),
-                          h('span', null, s2.problems.map((x, i) => h('div', { key: 'p' + i }, '· ' + x))))
+                          h('span', null, s2.problems.map((x, i) => h('div', { key: 'p' + i }, '- ' + x))))
                       : null,
                     (s2.needs_user || []).length > 0
                       ? h('div', { className: 'rt-kv' }, h('b', null, '需要你提供'),
                           h('span', { style: { color: 'var(--dsw-alias-state-warn-primary, #f59e0b)' } },
-                            s2.needs_user.map((x, i) => h('div', { key: 'n' + i }, '· ' + x))))
+                            s2.needs_user.map((x, i) => h('div', { key: 'n' + i }, '- ' + x))))
                       : null)
                 })(),
                 detail.path ? h('div', { className: 'rt-kv' }, h('b', null, '文件'), h('span', { className: 'rt-mono', style: { wordBreak: 'break-all' } }, detail.path)) : null,
@@ -4950,10 +4950,10 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
                   ? h('div', { className: 'rt-hint' },
                       h('div', { style: { fontWeight: 600, marginBottom: 4 } }, '现在跑不起来的技能：'),
                       meta.availability.broken.slice(0, 12).map((b) => h('div', { key: b.name },
-                        '· ' + b.name + (b.problems && b.problems.length ? ' — ' + b.problems[0] : ''))))
+                        '- ' + b.name + (b.problems && b.problems.length ? ' — ' + b.problems[0] : ''))))
                   : null,
                 (meta.byDir || []).slice(0, 6).map((d) => h('div', { key: d.key, className: 'rt-mono', style: { fontSize: 11, marginBottom: 2, overflowWrap: 'anywhere' } },
-                  d.n + ' 个 · ' + d.key)),
+                  d.n + ' 个 | ' + d.key)),
                 (meta.byDir || []).length > 6
                   ? h('div', { style: { fontSize: 11, color: 'var(--dsw-alias-label-secondary)' } },
                       '…另有 ' + ((meta.byDir || []).length - 6) + ' 个目录（共 ' + items.length + ' 个技能）')
@@ -5025,10 +5025,10 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
             h('div', { className: 'rt-spacer' }),
             h('span', { style: { fontWeight: 400, color: 'var(--dsw-alias-label-secondary)' } }, fmt(e.captured_at || e.created_at))),
           e.request ? h('div', null,
-            h('div', { className: 'rt-evi-head', style: { borderTop: 'none' } }, '▸ 请求（可直接粘进 Burp Repeater）'),
+            h('div', { className: 'rt-evi-head', style: { borderTop: 'none' } }, '+ 请求（可直接粘进 Burp Repeater）'),
             h(HttpBlock, { text: e.request, compact: true })) : null,
           e.response ? h('div', null,
-            h('div', { className: 'rt-evi-head' }, '▸ 响应'),
+            h('div', { className: 'rt-evi-head' }, '+ 响应'),
             h(HttpBlock, { text: e.response })) : null,
           e.note ? h('pre', { className: 'rt-evi-body', style: { maxHeight: 80 } }, e.note) : null))
       }
@@ -5098,7 +5098,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
         filesByVuln.get(vid).push(f)
       }
 
-      /* ── 结论行：只给结论，数字点一下就是筛选 ─────────────────────── */
+ /* 结论行：只给结论，数字点一下就是筛选 */
       const concl = (key, label, value, active, onClick) => h('span', Object.assign({
         key: key, className: 'rt-concl-i' + (active ? ' on' : ''), title: '点击筛选 / 再点取消',
       }, clickable(onClick, { label: '按「' + label + '」筛选（' + (value || 0) + '）', expanded: active })),
@@ -5112,7 +5112,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
         concl('gain', '拿到权限', (stats.withGained || 0), false, () => {}),
         h('div', { className: 'rt-spacer' }),
         h('span', { style: { fontSize: 11, color: 'var(--dsw-alias-label-secondary)' } },
-          '默认按目标聚合 · 共 ' + (stats.targetGroups || 0) + ' 个目标'))
+          '默认按目标聚合 | 共 ' + (stats.targetGroups || 0) + ' 个目标'))
 
       const head = h('div', { className: 'rt-vrow head' },
         h('span', null, '等级'), h('span', null, '漏洞 / 编号'), h('span', null, '目标'),
@@ -5130,7 +5130,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
           onKeyDown: (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setOpenId(open ? null : v.id) } },
         },
           h('span', null, h('span', { className: sevClass(v.severity) }, SEV_LABEL[v.severity] || v.severity)),
-          h('span', { title: v.title || '' }, h('span', { className: 'rt-sec-caret' }, open ? '▾' : '▸'), (v.cve ? v.cve + ' ' : '') + (v.title || '')),
+          h('span', { title: v.title || '' }, h('span', { className: 'rt-sec-caret' }, open ? '-' : '+'), (v.cve ? v.cve + ' ' : '') + (v.title || '')),
           compact ? null : h('span', { className: 'rt-mono', title: v.target || '' }, v.target || v.asset_ip || '—'),
           h('span', { title: v.gained || '' },
             gainedList.length
@@ -5149,15 +5149,15 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
               : h('span', { style: { color: 'var(--dsw-alias-label-secondary)' } },
                   '未记录 —— 拿到权限/成果后请用 redteam_vuln_update 补 gained（例：服务器权限、内网隧道、后台管理员账号）')),
           h('div', { className: 'rt-kv' }, h('b', null, '目标'), h('span', { className: 'rt-mono', style: { wordBreak: 'break-all' } }, v.target || '—')),
-          h('div', { className: 'rt-kv' }, h('b', null, '资产'), h('span', null, (v.asset_ip || '—') + ' · ' + (v.segment_cidr || ''))),
-          h('div', { className: 'rt-kv' }, h('b', null, '来源'), h('span', null, (v.source || '—') + ' · ' + (v.found_by_agent || '—') + ' · ' + fmt(v.found_at))),
+          h('div', { className: 'rt-kv' }, h('b', null, '资产'), h('span', null, (v.asset_ip || '—') + ' | ' + (v.segment_cidr || ''))),
+          h('div', { className: 'rt-kv' }, h('b', null, '来源'), h('span', null, (v.source || '—') + ' | ' + (v.found_by_agent || '—') + ' | ' + fmt(v.found_at))),
           detailEvidence(v),
           (() => {
             const mine = filesByVuln.get(Number(v.id)) || []
             return h('div', { className: 'rt-kv' }, h('b', null, '攻击文件'),
               mine.length
                 ? h('span', null, mine.map((f, fi) => h('div', { key: 'af' + fi, style: { marginBottom: 3 } },
-                    '· ' + (f.kind ? '[' + f.kind + '] ' : '') + (f.name || '(未命名)')
+                    '- ' + (f.kind ? '[' + f.kind + '] ' : '') + (f.name || '(未命名)')
                     + (f.description ? ' — ' + f.description : ''),
                     h('div', { className: 'rt-mono', style: { fontSize: 11, marginLeft: 12, color: 'var(--dsw-alias-label-secondary)', overflowWrap: 'anywhere' } }, f.path || ''))))
                 : h('span', { style: { color: 'var(--dsw-alias-label-secondary)' } },
@@ -5199,7 +5199,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
               SEV_LABEL[g.top.severity] || g.top.severity,
               g.exploited ? '已利用 ' + g.exploited : null,
               g.top.asset_ip && g.top.asset_ip !== g.key ? '资产 ' + g.top.asset_ip : null,
-            ].filter(Boolean).join(' · '),
+            ].filter(Boolean).join(' | '),
             right: g.gained.length
               ? g.gained.slice(0, 2).join(' / ') + (g.gained.length > 2 ? ' +' + (g.gained.length - 2) : '')
               : '未记录权限',
@@ -5237,7 +5237,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
           h('option', { value: 'fixed' }, '已修复')))
 
       const credSection = h('div', null,
-        h('div', { className: 'rt-section' }, '凭据 · ' + creds.length + (creds.length ? '（明文直显，注意屏幕分享/录屏）' : '')),
+        h('div', { className: 'rt-section' }, '凭据 | ' + creds.length + (creds.length ? '（明文直显，注意屏幕分享/录屏）' : '')),
         creds.length
           ? h('div', { style: { padding: '4px 10px 0' } }, creds.map((c) => h('div', { key: 'c' + c.id, className: 'rt-cred' },
               h('div', { className: 'rt-cred-head' },
@@ -5258,12 +5258,12 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
                   c.tool ? '工具 ' + c.tool : null,
                   c.secret_ref ? '证据 ' + c.secret_ref : null,
                   c.found_by_agent ? 'by ' + c.found_by_agent : null,
-                  c.found_at ? fmt(c.found_at) : null].filter(Boolean).join(' · ')),
+                  c.found_at ? fmt(c.found_at) : null].filter(Boolean).join(' | ')),
               c.note ? h('div', { className: 'rt-cred-meta' }, '备注：' + c.note) : null)))
           : h('div', { className: 'rt-empty' }, '暂无凭据（拿到口令/密钥/Hash 后用 redteam_credential_add 落库，秒级可复用）'))
 
       const accessSection = h('div', null,
-        h('div', { className: 'rt-section' }, '已获得访问会话 · ' + accesses.length),
+        h('div', { className: 'rt-section' }, '已获得访问会话 | ' + accesses.length),
         accesses.length
           ? accesses.map((a) => h('div', { key: 'a' + a.id, className: 'rt-vrow', style: { cursor: 'default', gridTemplateColumns: '1fr 110px 80px 80px 1fr' } },
               h('span', { className: 'rt-mono' }, a.host),
@@ -5321,7 +5321,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
     /* ---------------------------------------------------------- 攻击链（五阶段） */
     /**
      * 按攻击面位置串成一条链：
-     * ① 信息收集 → ② 互联网资产权限 → ③ 边界突破 → ④ 内网资产权限 → ⑤ 靶标权限。
+     * 1 信息收集 -> 2 互联网资产权限 -> 3 边界突破 -> 4 内网资产权限 -> 5 靶标权限。
      * 每阶段只讲两件事：这一步拿到多少分（累计多少）、涉及的资产/隧道是哪些。
      * A = 竖向链（详细）；B = 横向链（一屏看完）。
      */
@@ -5348,7 +5348,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
       const stages = (data && data.stages) || []
       const summary = (data && data.summary) || null
       const toggle = (id) => setOpenId((cur) => (cur === id ? null : id))
-      const CIRCLED = ['①', '②', '③', '④', '⑤', '⑥']
+      const CIRCLED = ['1', '2', '3', '4', '5', '6']
 
       /* 单次得分的详情 */
       const hitDetail = (x) => h('div', { className: 'rt-flow-detail' },
@@ -5356,8 +5356,8 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
         x.asset_ip ? h('div', { className: 'rt-kv' }, h('b', null, '资产'), h('span', { className: 'rt-mono' }, x.asset_ip)) : null,
         x.vuln_title ? h('div', { className: 'rt-kv' }, h('b', null, '利用漏洞'), h('span', null, [x.vuln_cve, x.vuln_title].filter(Boolean).join(' '))) : null,
         h('div', { className: 'rt-kv' }, h('b', null, '次数'), h('span', null,
-          '同类第 ' + x.nth_of_point + ' 次 · +' + (x.points || 0) + ' 分')),
-        h('div', { className: 'rt-kv' }, h('b', null, '记录'), h('span', null, fmt(x.recorded_at) + (x.recorded_by ? ' · ' + x.recorded_by : ''))),
+          '同类第 ' + x.nth_of_point + ' 次 | +' + (x.points || 0) + ' 分')),
+        h('div', { className: 'rt-kv' }, h('b', null, '记录'), h('span', null, fmt(x.recorded_at) + (x.recorded_by ? ' | ' + x.recorded_by : ''))),
         x.evidence ? h(Clip, { label: '结果与证据', text: x.evidence }) : null)
 
       const hitRow = (x) => h('div', {
@@ -5371,7 +5371,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
           h('span', { className: 'rt-ap-pts' + (x.counted ? '' : ' uncounted'), title: x.capped_reason || undefined },
             '+' + (x.counted ? (x.points || 0) : 0)),
           h('span', { className: 'rt-ap-hit-name' }, x.point_name),
-          x.capped ? h('span', { className: 'rt-tag rt-tag-warn', title: x.capped_reason || '同一资产同一端口只算分值最高的一条' }, '服务已拿满 · 不计分') : null,
+          x.capped ? h('span', { className: 'rt-tag rt-tag-warn', title: x.capped_reason || '同一资产同一端口只算分值最高的一条' }, '服务已拿满 | 不计分') : null,
           x.nth_of_point > 1 ? h('span', { className: 'rt-ap-nth' }, '第 ' + x.nth_of_point + ' 次') : null,
           h('span', { className: 'rt-ap-hit-target' }, x.target || x.asset_ip || '—')),
         x.action
@@ -5396,26 +5396,26 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
       /* 攻击链只讲"打到哪了、拿了多少分"：不展示打法要点与工具清单，
          那些是执行细节，混在链路里会淹没得分与资产信息。 */
 
-      /* ── A：竖向攻击链 ─────────────────────────────────────────── */
+ /* A：竖向攻击链 */
       const stageA = (st, i) => {
         const isRecon = st.code === 'recon'
         const body = []
         if (isRecon) {
-          body.push(h('div', { key: 'at', className: 'rt-ap-sub' }, '拿到分数的资产 · ' + st.assetCount + ' 台'))
+          body.push(h('div', { key: 'at', className: 'rt-ap-sub' }, '拿到分数的资产 | ' + st.assetCount + ' 台'))
           body.push(h('div', { key: 'al', className: 'rt-ap-assets' },
             st.assets.length ? st.assets.map(assetRow) : h('div', { className: 'rt-ap-none' }, '还没有产生得分的资产')))
         } else {
           body.push(h('div', { key: 'ht', className: 'rt-ap-sub' },
-            '本阶段命中 ' + st.hits + ' 次' + (st.points ? ' · +' + st.points + ' 分' : '')))
+            '本阶段命中 ' + st.hits + ' 次' + (st.points ? ' | +' + st.points + ' 分' : '')))
           body.push(h('div', { key: 'hl', className: 'rt-ap-hits' },
             st.items.length ? st.items.map(hitRow) : h('div', { className: 'rt-ap-none' }, '本阶段还没有得分')))
           if (st.code === 'boundary') {
             const selfOnly = (st.tunnels_self_only || []).length
             body.push(h('div', { key: 'tt', className: 'rt-ap-sub' },
-              '跨越靶标边界的通道 · ' + st.tunnels.length + ' 条' + (selfOnly ? '（另有 ' + selfOnly + ' 条只在自己 VPS/自建服务器上，不算突破）' : '')))
+              '跨越靶标边界的通道 | ' + st.tunnels.length + ' 条' + (selfOnly ? '（另有 ' + selfOnly + ' 条只在自己 VPS/自建服务器上，不算突破）' : '')))
             if (selfOnly && st.tunnels.length === 0) {
               body.push(h('div', { key: 'tw', className: 'rt-ap-none' },
-                '⚠️ 现有的通道都在自己的服务器上，没有碰到目标 —— 不计边界突破。需要目标侧发起的通道（反弹 shell 到我这 / 目标上跑 frp 客户端 / 经目标 WebShell 的 suo5）。'))
+                '注意：现有的通道都在自己的服务器上，没有碰到目标 —— 不计边界突破。需要目标侧发起的通道（反弹 shell 到我这 / 目标上跑 frp 客户端 / 经目标 WebShell 的 suo5）。'))
             }
             body.push(h('div', { key: 'tl', className: 'rt-ap-tunnels' },
               st.tunnels.length
@@ -5431,7 +5431,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
                 : h('div', { className: 'rt-ap-none' }, '还没有建立隧道（建好后用 redteam_tunnel_add 登记）')))
           }
           if (st.assets.length && st.code !== 'boundary') {
-            body.push(h('div', { key: 'at', className: 'rt-ap-sub' }, '涉及资产 · ' + st.assetCount + ' 台'))
+            body.push(h('div', { key: 'at', className: 'rt-ap-sub' }, '涉及资产 | ' + st.assetCount + ' 台'))
             body.push(h('div', { key: 'al', className: 'rt-ap-assets' }, st.assets.map(assetRow)))
           }
         }
@@ -5450,17 +5450,17 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
           h('div', { className: 'rt-ap-result', style: { borderLeftColor: st.color } }, body),
           i < stages.length - 1
             ? h('div', { className: 'rt-ap-trans' },
-                h('span', { className: 'rt-flow-arrow' }, '▼'),
+                h('span', { className: 'rt-flow-arrow' }, 'v'),
                 st.transition ? h('span', { className: 'rt-ap-trans-t' }, st.transition) : null,
                 h('span', { className: 'rt-ap-trans-t', style: { marginLeft: 'auto' } }, '累计 ' + st.cumulative + ' 分'))
             : h('div', { className: 'rt-ap-trans' },
-                h('span', { className: 'rt-flow-arrow' }, '▼'),
+                h('span', { className: 'rt-flow-arrow' }, 'v'),
                 h('span', { className: 'rt-ap-trans-t' }, '合计 ' + ((summary && summary.points) || 0) + ' 分')))
       }
 
-      /* ── B：横向攻击链（一屏看完） ─────────────────────────────── */
+ /* B：横向攻击链（一屏看完） */
       const stageB = (st, i) => h('div', { key: 'c' + st.code, className: 'rt-ap-col' },
-        i > 0 ? h('span', { className: 'rt-ap-col-arrow' }, '▶') : null,
+        i > 0 ? h('span', { className: 'rt-ap-col-arrow' }, '->') : null,
         h('div', { className: 'rt-hcol', style: { borderTopColor: st.color } },
           h('div', { className: 'rt-ap-head', style: { borderLeftColor: st.color, padding: '5px 8px' } },
             h('span', { className: 'rt-ap-no', style: { background: st.color, width: 16, height: 16, fontSize: 10 } }, String(i + 1)),
@@ -5472,7 +5472,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
             st.code === 'boundary'
               ? h('div', null,
                   h('div', { className: 'rt-hcol-hit' }, h('span', { className: 'rt-hcol-pts' }, '+' + st.points), h('span', { className: 'rt-hcol-name' }, '隧道 ' + st.tunnels.length + ' 条')),
-                  st.tunnels.slice(0, 3).map((t) => h('div', { key: 't' + t.id, className: 'rt-hcol-sub' }, '▸ ' + (t.kind || '') + ' ' + (t.listen || ''))))
+                  st.tunnels.slice(0, 3).map((t) => h('div', { key: 't' + t.id, className: 'rt-hcol-sub' }, '+ ' + (t.kind || '') + ' ' + (t.listen || ''))))
               : st.code === 'recon'
                 ? h('div', null,
                     h('div', { className: 'rt-hcol-hit' }, h('span', { className: 'rt-hcol-pts' }, st.assetCount), h('span', { className: 'rt-hcol-name' }, '台资产拿到分')),
@@ -5488,7 +5488,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
       return h('div', { className: 'rt-main' },
         h('div', { className: 'rt-toolbar' },
           h('span', { style: { fontWeight: 600 } }, '攻击链'),
-          h('span', { className: 'rt-tag', style: { fontSize: 10.5 } }, '信息收集 → 互联网资产权限 → 边界突破 → 内网资产权限 → 靶标权限'),
+          h('span', { className: 'rt-tag', style: { fontSize: 10.5 } }, '信息收集 -> 互联网资产权限 -> 边界突破 -> 内网资产权限 -> 靶标权限'),
           summary ? h('span', { className: 'rt-tag rt-tag-live' }, '总分 ' + summary.points + ' 分') : null,
           h('div', { className: 'rt-spacer' }),
           h('button', { className: 'rt-btn' + (view === 'A' ? ' rt-btn-primary' : ''), title: '竖向攻击链：逐阶段向下看细节', onClick: () => setView('A') }, '链路 A'),
@@ -5581,9 +5581,9 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
       const stages = (data && data.stages) || []
       const summary = (data && data.summary) || null
       const mdText = (data && data.markdown) || ''
-      const CIRCLED = ['①', '②', '③', '④', '⑤', '⑥', '⑦', '⑧', '⑨', '⑩', '⑪', '⑫', '⑬', '⑭', '⑮', '⑯', '⑰', '⑱', '⑲', '⑳']
+      const CIRCLED = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20']
 
-      /* 每项一条，平铺不折叠：目标 → 拿到什么 → 复现请求（可直接粘进 Yakit）→ 响应 */
+      /* 每项一条，平铺不折叠：目标 -> 拿到什么 -> 复现请求（可直接粘进 Yakit）-> 响应 */
       const card = (x) => h('div', { key: 'r' + x.id, className: 'rt-rep' },
         h('div', { className: 'rt-rep-head' },
           h('span', { className: 'rt-rep-idx' }, String(x.seq)),
@@ -5605,7 +5605,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
         x.recorded_at ? h('div', { className: 'rt-rep-meta' }, h('b', null, '取得时间 '),
           h('span', null, fmt(x.recorded_at) + (x.recorded_by ? '（' + (ROLE_LABEL[x.recorded_by] || x.recorded_by) + '）' : ''))) : null,
         h(ShotStrip, { eng: eng, shots: x.shots, total: x.shot_total, title: '证据截图' }),
-        /* ── 复现步骤：动作记录（含实际命令与回显）+ 凭据 + 隧道 + WebShell ─────
+ /* 复现步骤：动作记录（含实际命令与回显）+ 凭据 + 隧道 + WebShell
            报告的交付价值全在这块：账号密码怎么来的、隧道怎么搭的，用户照着就能复现。 */
         h('details', { className: 'rt-rep-trace', open: x.incomplete === true || (x.steps || []).length === 0 },
           h('summary', { className: 'rt-rep-trace-head', style: { cursor: 'pointer' } },
@@ -5618,7 +5618,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
           x.how ? h('div', { className: 'rt-rep-trace-how' }, x.how) : null,
           (x.steps || []).length === 0
             ? h('div', { className: 'rt-rep-missing' },
-                '⚠️ 没有关联的攻击步骤：说不清这一步是怎么做的。请用 redteam_chain_add 补上动作（title / detail / tool / result），记分时也可以带 point_code + evidence 一次完成。')
+                '注意：没有关联的攻击步骤：说不清这一步是怎么做的。请用 redteam_chain_add 补上动作（title / detail / tool / result），记分时也可以带 point_code + evidence 一次完成。')
             : (x.steps || []).map((s, si) => h('div', { key: 's' + s.id, className: 'rt-rep-step' },
                 h('div', { className: 'rt-rep-step-head' },
                   h('span', { className: 'rt-rep-step-no' }, String(si + 1)),
@@ -5648,9 +5648,9 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
                 (x.credentials || []).map((c) => h('div', { key: 'c' + c.id, className: 'rt-kv' },
                   h('b', { className: 'rt-mono', style: { minWidth: 120 } }, c.host || '—'),
                   h('span', null, (c.username || '(无用户名)') + ' / ' + (c.secret_type || 'password')
-                    + (c.privilege ? ' · 权限 ' + c.privilege : '')
-                    + ' · 来源 ' + (c.source || '未标注')
-                    + (c.tool ? ' · 取得方式 ' + String(c.tool).replace(/\n+/g, ' ').slice(0, 160) : '')))))
+                    + (c.privilege ? ' | 权限 ' + c.privilege : '')
+                    + ' | 来源 ' + (c.source || '未标注')
+                    + (c.tool ? ' | 取得方式 ' + String(c.tool).replace(/\n+/g, ' ').slice(0, 160) : '')))))
             : null,
           /* 隧道怎么搭的 */
           (x.tunnels || []).length
@@ -5659,23 +5659,23 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
                 (x.tunnels || []).map((t) => h('div', { key: 't' + t.id, className: 'rt-kv' },
                   h('b', { className: 'rt-mono', style: { minWidth: 120 } }, (t.kind || 'socks5') + ' ' + (t.listen || '')),
                   h('span', null, '入口 ' + (t.entry || '未登记')
-                    + (t.reach ? ' · 可达 ' + t.reach : '')
-                    + ' · 目标侧 ' + (t.entry_kind || '未声明')
-                    + (t.legit === false ? ' · ⚠️ 不算跨越靶标边界' : '')
-                    + (t.status ? ' · ' + t.status : '')
-                    + (t.command ? ' · 命令 ' + String(t.command).replace(/\n+/g, ' ').slice(0, 160) : '')))))
+                    + (t.reach ? ' | 可达 ' + t.reach : '')
+                    + ' | 目标侧 ' + (t.entry_kind || '未声明')
+                    + (t.legit === false ? ' | 注意：不算跨越靶标边界' : '')
+                    + (t.status ? ' | ' + t.status : '')
+                    + (t.command ? ' | 命令 ' + String(t.command).replace(/\n+/g, ' ').slice(0, 160) : '')))))
             : null,
           (x.webshells || []).length
             ? h('div', { className: 'rt-rep-src' },
                 h('div', { className: 'rt-rep-src-title' }, '用到的 WebShell'),
                 (x.webshells || []).map((w) => h('div', { key: 'w' + w.id, className: 'rt-kv' },
                   h('b', { className: 'rt-mono', style: { minWidth: 120 } }, w.shell_type || 'shell'),
-                  h('span', null, (w.url || '') + (w.pass_key ? ' · 口令/密钥 ' + w.pass_key : '')
-                    + (w.privilege ? ' · 权限 ' + w.privilege : '') + (w.status ? ' · ' + w.status : '')))))
+                  h('span', null, (w.url || '') + (w.pass_key ? ' | 口令/密钥 ' + w.pass_key : '')
+                    + (w.privilege ? ' | 权限 ' + w.privilege : '') + (w.status ? ' | ' + w.status : '')))))
             : null,
-          (x.gaps || []).length ? h('div', { className: 'rt-rep-missing' }, '⚠️ 复现缺口：' + x.gaps.join('；')) : null),
+          (x.gaps || []).length ? h('div', { className: 'rt-rep-missing' }, '注意：复现缺口：' + x.gaps.join('；')) : null),
         (x.requests || []).length === 0
-          ? h('div', { className: 'rt-rep-missing' }, '⚠️ 这一项没有原始请求记录，无法直接复现 —— 请用 redteam_http_evidence_add 补上')
+          ? h('div', { className: 'rt-rep-missing' }, '注意：这一项没有原始请求记录，无法直接复现 —— 请用 redteam_http_evidence_add 补上')
           : (x.requests || []).map((r, ri) => h('div', { key: 'q' + ri, className: 'rt-rep-req' },
               h('div', { className: 'rt-rep-req-head' },
                 h('span', null, '复现请求 ' + (ri + 1) + (r.source === 'auto' ? '（按目标路径自动匹配，请核对）' : '')),
@@ -5732,7 +5732,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
                       onClick: toggle,
                       onKeyDown: (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(e) } },
                     },
-                      h('span', { className: 'rt-sec-caret' }, open ? '▾' : '▸'),
+                      h('span', { className: 'rt-sec-caret' }, open ? '-' : '+'),
                       h('span', { className: 'rt-rep-no', style: { background: st.color } }, CIRCLED[st.ordinal - 1] || st.ordinal),
                       h('span', { className: 'rt-rep-stage-name' }, st.name),
                       h('span', { className: 'rt-rep-stage-n' }, st.items.length + ' 项'),
@@ -5795,7 +5795,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
             onClick: () => openFile(f),
             onKeyDown: (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openFile(f) } },
           },
-            h('span', { className: 'rt-sec-caret' }, detail && detail.id === f.id ? '▾' : '▸'),
+            h('span', { className: 'rt-sec-caret' }, detail && detail.id === f.id ? '-' : '+'),
             h('span', { className: 'rt-mono' }, f.name),
             h('span', null, h('span', { className: 'rt-tag rt-tag-active' }, FILE_KIND[f.kind] || f.kind || '—')),
             h('span', { style: { fontSize: 11.5, color: 'var(--dsw-alias-label-secondary)' }, title: f.description || '' }, f.description || '—')))
@@ -5805,7 +5805,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
           }, h('div', { className: 'rt-vdetail' },
             h('div', { className: 'rt-kv' }, h('b', null, '效果'), h('span', null, detail.evidence || '—')),
             h('div', { className: 'rt-kv' }, h('b', null, '路径'), h('span', { className: 'rt-mono', style: { wordBreak: 'break-all' } }, detail.path)),
-            h('div', { className: 'rt-kv' }, h('b', null, '记录'), h('span', null, fmt(detail.created_at) + (detail.created_by ? ' · ' + detail.created_by : ''))),
+            h('div', { className: 'rt-kv' }, h('b', null, '记录'), h('span', null, fmt(detail.created_at) + (detail.created_by ? ' | ' + detail.created_by : ''))),
             h('pre', { className: 'rt-md', style: { border: '1px solid var(--dsw-alias-border-l1)', borderRadius: 6, maxHeight: '40vh', padding: '10px 12px' } }, detail.content || '（空）'))))
         }
         rows.push(h(Section, {
@@ -5925,7 +5925,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
             onClick: () => open(x.id),
             onKeyDown: (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(x.id) } },
           },
-            h('span', { className: 'rt-sec-caret' }, isOpen ? '▾' : '▸'),
+            h('span', { className: 'rt-sec-caret' }, isOpen ? '-' : '+'),
             h('span', { className: 'rt-kb-kind k-' + (x.kind || 'poc') }, POC_KIND_LABEL[x.kind] || x.kind || 'POC'),
             h('span', { className: 'rt-kb-title' }, x.title),
             x.cve ? h('span', { className: 'rt-tag rt-tag-passive' }, x.cve) : null,
@@ -5936,7 +5936,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
             h('div', { className: 'rt-spacer' }),
             h('span', { className: 'rt-tag' }, POC_SOURCE_LABEL[x.source] || x.source || '—'),
             x.hit_count ? h('span', { className: 'rt-tag' }, '复用 ' + x.hit_count) : null),
-          /* 来源行：归类 · 影响版本 · 建立时间 · 来源靶标 · 发现资产 —— 一条知识"什么时候、
+          /* 来源行：归类 | 影响版本 | 建立时间 | 来源靶标 | 发现资产 —— 一条知识"什么时候、
              在哪个单位的哪台资产上发现的"一眼可见 */
           h('div', { className: 'rt-kb-sub' },
             [x.category ? '归类 ' + (POC_CAT_NAME[x.category] || x.category) : null,
@@ -5947,7 +5947,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
               (x.engagement_name || x.engagement_id) ? '来源靶标 ' + (x.engagement_name || x.engagement_id) : null,
               x.asset_target ? '发现资产 ' + x.asset_target : null,
               x.found_by_agent ? '发现角色 ' + (ROLE_LABEL[x.found_by_agent] || x.found_by_agent) : null,
-              x.source_url ? '来源 ' + x.source_url : null].filter(Boolean).join(' · ')),
+              x.source_url ? '来源 ' + x.source_url : null].filter(Boolean).join(' | ')),
           isOpen
             ? h('div', { className: 'rt-kb-body' },
                 detailBusy && !d ? h('div', { className: 'rt-empty' }, '读取中…') : null,
@@ -5970,7 +5970,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
 
       return h('div', { className: 'rt-main' },
         h('div', { className: 'rt-toolbar' },
-          h('span', { style: { fontWeight: 600 } }, '知识库 · POC / EXP'),
+          h('span', { style: { fontWeight: 600 } }, '知识库 | POC / EXP'),
           h('span', { className: 'rt-tag' }, stats.total + ' 条'),
           h('span', { className: 'rt-tag rt-tag-live' }, '已验证 ' + stats.verified),
           h('span', { className: 'rt-tag' }, '累计复用 ' + (stats.reused || 0)),
@@ -5987,8 +5987,8 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
             key: c.code,
             className: 'rt-concl-i' + (category === c.code ? ' on' : ''),
             title: (c.hint || POC_CAT_NAME[c.code] || c.code)
-              + ' · 本机模板 ' + (tplByCat.get(c.code) || 0)
-              + ' · 知识库 ' + (c.n || 0)
+              + ' | 本机模板 ' + (tplByCat.get(c.code) || 0)
+              + ' | 知识库 ' + (c.n || 0)
               + (c.verified ? '（已验证 ' + c.verified + '）' : ''),
             onClick: () => {
               const next = category === c.code ? '' : c.code
@@ -6062,7 +6062,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
           tplItems.length
             ? h('div', { className: 'rt-kb-tpl' },
                 h('div', { className: 'rt-ap-sub' },
-                  '本机 nuclei 模板 · ' + (tplStart + 1) + '–' + (tplStart + tplItems.length) + ' / ' + tplMatched
+                  '本机 nuclei 模板 | ' + (tplStart + 1) + '–' + (tplStart + tplItems.length) + ' / ' + tplMatched
                   + '（直接 `nuclei -t <模板路径>`）'),
                 tplItems.map((t, i) => h('div', { key: 't' + tplStart + '-' + i, className: 'rt-kb-tpl-row' },
                   h('span', { className: 'rt-tag' }, t.severity || '—'),
@@ -6096,7 +6096,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
                         ? '知识库还是空的（本机模板目录存在但没有 yaml，请跑 nuclei -update-templates）。'
                         : '知识库还是空的。本机也还没有 nuclei 模板库 —— 在演练机上跑 setup.sh 或 `nuclei -update-templates`，装好后这里会出现「本机模板 N」。'))),
                 h('div', { style: { marginTop: 6, fontSize: 12 } },
-                  '打 Nday/1day 的标准顺序：① redteam_poc_search 先查这里（顺带搜本机 nuclei 模板库）→ ② 都没有就互联网搜索（web_search / GitHub / ExploitDB / 厂商公告）或自己手搓 → ③ 在真实目标上验证有效后 redteam_poc_add 回填，后面的靶标直接就能用。'),
+                  '打 Nday/1day 的标准顺序：1 redteam_poc_search 先查这里（顺带搜本机 nuclei 模板库）-> 2 都没有就互联网搜索（web_search / GitHub / ExploitDB / 厂商公告）或自己手搓 -> 3 在真实目标上验证有效后 redteam_poc_add 回填，后面的靶标直接就能用。'),
                 data.dbPath ? h('div', { style: { marginTop: 6, fontSize: 11 }, className: 'rt-mono' }, '知识库文件：' + data.dbPath) : null,
                 tpl.dir ? h('div', { style: { marginTop: 6, fontSize: 11 }, className: 'rt-mono' }, '模板目录：' + tpl.dir) : null)
             : null),
@@ -6198,7 +6198,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
           h('span', { className: 'rt-tag' }, runtime.effective === 'windows' ? 'Windows' : 'Linux/Kali'),
           adapt.kali ? h('span', { className: 'rt-tag rt-tag-live' }, 'Kali') : null,
           h('span', { className: 'rt-tag' + (adapt.ready ? ' rt-tag-live' : ' rt-tag-warn') },
-            adapt.ready ? ('就绪 · ' + (adapt.reason || '')) : '待配置'),
+            adapt.ready ? ('就绪 | ' + (adapt.reason || '')) : '待配置'),
           h('span', { className: 'rt-tag' + (found ? ' rt-tag-live' : ' rt-tag-warn') }, '工具 ' + found + '/' + tools.length),
           h('div', { className: 'rt-spacer' }),
           h('button', { className: 'rt-btn', disabled: busy, onClick: load }, busy ? '读取中…' : '刷新'),
@@ -6210,7 +6210,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
           adapt.message
             || '均可选填：留空则用默认路径/自动查找。填了的覆盖默认。密钥类只在需要测绘/反弹时才填。'),
         h('div', { className: 'rt-card', style: { margin: '0 0 8px', fontSize: 12, lineHeight: 1.6 } },
-          h('div', { style: { fontWeight: 600, marginBottom: 6 } }, '整包文件夹 → 自动分配工具'),
+          h('div', { style: { fontWeight: 600, marginBottom: 6 } }, '整包文件夹 -> 自动分配工具'),
           h('div', { style: { marginBottom: 8, opacity: 0.9 } },
             '工具都在同一个文件夹（含子目录）时，填路径后点「自动分配」：会写入 toolkitDir，并按文件名匹配 nmap / nuclei / fscan 等填到下方。'),
           h('div', { style: { display: 'flex', gap: 8, alignItems: 'center' } },
@@ -6281,12 +6281,12 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
           h('div', { className: 'rt-card' },
             h('h4', null, '工具可执行文件（留空＝自动查找）'),
             h('div', { style: { fontSize: 11.5, color: 'var(--dsw-alias-label-secondary)', marginBottom: 8 } },
-              '解析顺序：本表绝对路径 → toolkitDir → binDirs → PATH。留空即走默认查找。'),
+              '解析顺序：本表绝对路径 -> toolkitDir -> binDirs -> PATH。留空即走默认查找。'),
             tools.map((t) => h('div', { key: t.id, style: { marginBottom: 8 } },
               h('div', { style: { display: 'flex', gap: 8, alignItems: 'center', marginBottom: 4 } },
                 h('span', { style: { fontWeight: 600, minWidth: 88 } }, t.label || t.id),
                 t.path
-                  ? h('span', { className: 'rt-tag rt-tag-live', title: t.path }, t.source + ' · 已找到')
+                  ? h('span', { className: 'rt-tag rt-tag-live', title: t.path }, t.source + ' | 已找到')
                   : h('span', { className: 'rt-tag rt-tag-warn' }, '未找到（可留空等装好）')),
               h('input', {
                 className: 'rt-input', style: { width: '100%' },
@@ -6392,7 +6392,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
             h('span', null, g.name),
             h('span', { className: 'rt-sg-sub' },
               g.tiers.length + ' 项'
-              + (g.capSum > 0 ? ' · 各项上限合计 ' + g.capSum + ' 分（各项独立，不跨项累加）' : '')),
+              + (g.capSum > 0 ? ' | 各项上限合计 ' + g.capSum + ' 分（各项独立，不跨项累加）' : '')),
             h('div', { className: 'rt-spacer' }),
             g.points > 0
               ? h('span', { className: 'rt-tag rt-tag-active' }, '+' + g.points + ' 分')
@@ -6406,7 +6406,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
           onClick: () => setOpenId(open ? null : p.id),
           onKeyDown: (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setOpenId(open ? null : p.id) } },
         },
-          h('span', { className: 'rt-sec-caret' }, open ? '▾' : '▸'),
+          h('span', { className: 'rt-sec-caret' }, open ? '-' : '+'),
           h('span', null, h('span', {
             className: achieved ? 'rt-pri rt-pri-high' : 'rt-pri rt-pri-low',
             style: achieved ? {} : { background: 'var(--dsw-alias-bg-layer-2)', color: 'var(--dsw-alias-label-secondary)' },
@@ -6434,11 +6434,11 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
           h('span', { className: 'rt-hit-idx' }, String(hi + 1)),
           h('span', { className: 'rt-hit-asset', title: hh.target || hh.asset_ip || '' },
             hh.asset_ip || hh.target || '未指定资产'),
-          hh.self_created ? h('span', { className: 'rt-tag rt-tag-warn', title: '自己注册/自建的账号不算得分权限，只作过程记录' }, '自建 · 不计分') : null,
+          hh.self_created ? h('span', { className: 'rt-tag rt-tag-warn', title: '自己注册/自建的账号不算得分权限，只作过程记录' }, '自建 | 不计分') : null,
           hh.capped ? h('span', {
             className: 'rt-tag rt-tag-warn',
             title: hh.capped_reason || '同一资产同一端口只算分值最高的一条，这条不计分',
-          }, '服务已拿满 · 不计分' + (hh.service ? '（' + hh.service + '）' : '')) : null,
+          }, '服务已拿满 | 不计分' + (hh.service ? '（' + hh.service + '）' : '')) : null,
           hh.shot_count ? h('span', { className: 'rt-tag', title: '这条命中有证据截图（展开得分点即可看到代表图）' },
             '图 ' + hh.shot_count) : null,
           h('span', { className: 'rt-hit-time' }, fmt(hh.recorded_at)),
@@ -6459,7 +6459,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
         }, h('div', { className: 'rt-score-detail' },
           p.description ? h('div', { className: 'rt-kv' }, h('b', null, '得分条件'), h('span', null, p.description)) : null,
           h('div', { className: 'rt-kv' }, h('b', null, '状态'),
-            h('span', null, (p.enabled ? '启用' : '停用') + ' · ' + p.points + ' 分/次 · 命中 ' + p.hits.length +
+            h('span', null, (p.enabled ? '启用' : '停用') + ' | ' + p.points + ' 分/次 | 命中 ' + p.hits.length +
               ' 次 = ' + p.earned + ' 分' + (p.self_created ? '（另有 ' + p.self_created + ' 次自建不计分）' : '') +
               (p.capped ? '（另有 ' + p.capped + ' 次同服务重复命中不计分）' : ''))),
           p.capped
@@ -6469,9 +6469,9 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
           p.hits.length
             ? h('div', null,
                 h(ShotStrip, { eng: eng, shots: p.shots, total: p.shot_total,
-                  title: '证据截图 · ' + (p.shot_total || (p.shots || []).length) + ' 张' }),
+                  title: '证据截图 | ' + (p.shot_total || (p.shots || []).length) + ' 张' }),
                 h('div', { className: 'rt-section', style: { padding: '6px 0 0' } },
-                  '命中记录 · ' + p.hits.length + '（只记资产与账号密码，详细复现见报告）'),
+                  '命中记录 | ' + p.hits.length + '（只记资产与账号密码，详细复现见报告）'),
                 h('div', { className: 'rt-hits' }, hitNodes))
             : h('div', { className: 'rt-kv' }, h('b', null, '命中记录'),
                 h('span', { style: { color: 'var(--dsw-alias-label-secondary)' } },
@@ -6519,8 +6519,8 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
                   + '要自定义分值时请返回上一屏点「+ 新增得分点」。'),
                 form.src !== null && form.src !== undefined
                   ? h('div', { style: { marginTop: 3, color: 'var(--dsw-alias-label-secondary)' } },
-                      '规则原文序号 ' + form.src + (form.rule ? '　·　上限分组 rule=' + form.rule : '')
-                      + (form.cap > 0 ? '　·　上限 ' + form.cap + ' 分' : '　·　不设上限'))
+                      '规则原文序号 ' + form.src + (form.rule ? '　-　上限分组 rule=' + form.rule : '')
+                      + (form.cap > 0 ? '　-　上限 ' + form.cap + ' 分' : '　-　不设上限'))
                   : null)
             : null,
           h('div', { className: 'rt-score-form' },
@@ -6612,7 +6612,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
     }
 
     /**
-     * 统一折叠头（L1）：▾ 固定在最左、标题加粗、计数紧跟、右侧放时间或操作，
+     * 统一折叠头（L1）：- 固定在最左、标题加粗、计数紧跟、右侧放时间或操作，
      * 内容缩进 12px 并带一条竖引导线。always=true 表示"常显"（不可折叠）。
      */
     function Section(props) {
@@ -6628,7 +6628,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
           if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (props.onToggle) props.onToggle(e) }
         },
       },
-        h('span', { className: 'rt-sec-caret' }, always ? '▍' : (open ? '▾' : '▸')),
+        h('span', { className: 'rt-sec-caret' }, always ? '|' : (open ? '-' : '+')),
         props.title ? h('span', { className: 'rt-sec-title' }, props.title) : null,
         props.count !== undefined && props.count !== null ? h('span', { className: 'rt-sec-count' }, String(props.count)) : null,
         props.sub ? h('span', { className: 'rt-sec-sub' }, props.sub) : null,
@@ -6726,7 +6726,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
             h('span', { className: 'rt-tag ' + (a.test_status === 'testing' ? 'rt-tag-live' : '') }, TEST_STATUS_LABEL[a.test_status] || a.test_status),
             h('div', { className: 'rt-spacer' }),
             h('span', { style: { fontSize: 11, color: 'var(--dsw-alias-label-secondary)' } },
-              fmt(a.test_updated_at) + (a.test_updated_by ? ' · ' + a.test_updated_by : ''))),
+              fmt(a.test_updated_at) + (a.test_updated_by ? ' | ' + a.test_updated_by : ''))),
           chips.length ? h('div', null, chips) : null,
           a.test_surface ? h('div', { className: 'rt-atest-meta' }, '测试面：' + a.test_surface) : null,
           a.potential ? h('div', { className: 'rt-atest-meta' }, '预期得分：' + a.potential) : null,
@@ -6756,7 +6756,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
         h('button', {
           className: 'rt-btn' + (auto ? ' rt-btn-primary' : ''), style: { padding: '0 7px', fontSize: 11 },
           title: '每 5 秒自动刷新', onClick: () => setAuto((x) => !x),
-        }, auto ? '实时 · 5s' : '已暂停'),
+        }, auto ? '实时 | 5s' : '已暂停'),
         h('button', { className: 'rt-btn', style: { padding: '0 7px', fontSize: 11 }, onClick: load }, '刷新'))
 
       const body = []
@@ -7086,20 +7086,20 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
           h('div', { className: 'rt-card' },
             h('h4', null, '并发规则（硬约束）'),
             h('div', { style: { fontSize: 12, lineHeight: 1.7 } },
-              '· 同一靶标**同时最多 ' + max + ' 个执行智能体**；主会话派活前用 `redteam_agent_slot` 占位，满了直接拒绝。',
+              '- 同一靶标**同时最多 ' + max + ' 个执行智能体**；主会话派活前用 `redteam_agent_slot` 占位，满了直接拒绝。',
               h('br'),
-              '· **默认一个一个派、按顺序推进**；只有确实互不依赖的活才并行。',
+              '- **默认一个一个派、按顺序推进**；只有确实互不依赖的活才并行。',
               h('br'),
-              '· 每个会话有**自己的靶标绑定**：多会话并行不会把报告写串（子智能体继承父会话的靶标）。')),
+              '- 每个会话有**自己的靶标绑定**：多会话并行不会把报告写串（子智能体继承父会话的靶标）。')),
           h('div', { className: 'rt-card' },
             h('h4', null, '六个角色'),
             h('div', { style: { fontSize: 12, lineHeight: 1.8 } },
-              '① 信息收集 `recon` —— 只收集资产，把单位资产收集完整（含边缘与未备案资产）', h('br'),
-              '② 资产梳理 `assess` —— 一条一条过，评易打性并全部落库', h('br'),
-              '③ 漏洞发现 `vuln-scan` —— 先查库去重 → Nday/1day 优先 → 接口未授权探测', h('br'),
-              '④ 漏洞利用 `exploit` —— 先拿服务器权限（冰蝎/哥斯拉马）+ 建 suo5 隧道，再打其它得分项', h('br'),
-              '⑤ 内网渗透 `internal` —— 走隧道，依次拉起 ①②③④ 做内网', h('br'),
-              '⑥ 主会话 `plan` —— 只做计划、派活、汇总、汇报，不动手')),
+              '1 信息收集 `recon` —— 只收集资产，把单位资产收集完整（含边缘与未备案资产）', h('br'),
+              '2 资产梳理 `assess` —— 一条一条过，评易打性并全部落库', h('br'),
+              '3 漏洞发现 `vuln-scan` —— 先查库去重 -> Nday/1day 优先 -> 接口未授权探测', h('br'),
+              '4 漏洞利用 `exploit` —— 先拿服务器权限（冰蝎/哥斯拉马）+ 建 suo5 隧道，再打其它得分项', h('br'),
+              '5 内网渗透 `internal` —— 走隧道，依次拉起 1234 做内网', h('br'),
+              '6 主会话 `plan` —— 只做计划、派活、汇总、汇报，不动手')),
           h(ConcurrencyCard, { concurrency, onSaved: load }),
           h('div', { className: 'rt-card' },
             h('h4', null, '角色提示词（按靶标存，可在这里编辑）'),
@@ -7148,7 +7148,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
           msg && msg.err ? h('span', { style: { fontSize: 12, color: 'var(--rt-danger, #d33)' } }, msg.err) : null,
           msg && msg.ok ? h('span', { style: { fontSize: 12, color: 'var(--dsw-alias-label-secondary)' } }, msg.ok) : null),
         h('div', { className: 'rt-note', style: { marginTop: 8 } },
-          '⚠️ 调大不等于更快：**同一个模型 API Key 的并发/速率上限是共享的**，同时派太多会互相挤占，'
+          '注意：调大不等于更快：**同一个模型 API Key 的并发/速率上限是共享的**，同时派太多会互相挤占，'
           + '表现为排队等待、超时、返回被截断甚至限流报错 —— 反而让测试结果不稳定（漏测、半途而废）。'
           + '建议从 2–3 开始，只有在确认 Key 的额度足够、任务之间确实互不依赖时才调大。'))
     }
@@ -7158,7 +7158,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
      *
      * 行为：挂载时静默查一次最新版本（npm registry），有新版本就把按钮点亮成
      * 「有新版本 vX」；点击弹出确认框（当前版本 / 最新版本 / 安装位置 / 阻塞项），
-     * 确认后由 host 侧执行 安装 → 重启 dsh web（页面会断开，重启后刷新即可）。
+     * 确认后由 host 侧执行 安装 -> 重启 dsh web（页面会断开，重启后刷新即可）。
      */
     function VersionBar(props) {
       const [info, setInfo] = React.useState(null)
@@ -7256,13 +7256,13 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
                 blockers.length
                   ? h('div', { className: 'rt-hint' },
                       h('div', { style: { fontWeight: 600, marginBottom: 4 } }, '现在不能更新：'),
-                      blockers.map((b, i) => h('div', { key: 'b' + i }, '· ' + b)))
+                      blockers.map((b, i) => h('div', { key: 'b' + i }, '- ' + b)))
                   : null,
                 notes.length
                   ? h('div', { className: 'rt-foot', style: { padding: '4px 0' } }, notes.map((n, i) => h('div', { key: 'n' + i }, n)))
                   : null,
                 h('div', { style: { fontSize: 12, color: 'var(--dsw-alias-label-secondary)', margin: '8px 0' } },
-                  '更新过程：安装新版本 → 自动重启当前宿主（官方 exe / 社区版 / dsh web；当前页面会断开，约 5–10 秒后自动刷新）。'
+                  '更新过程：安装新版本 -> 自动重启当前宿主（官方 exe / 社区版 / dsh web；当前页面会断开，约 5–10 秒后自动刷新）。'
                   + '重启前会检查有没有智能体在跑，有就拦住不动。'),
                 msg ? h('div', { className: msg.err ? 'rt-err' : 'rt-foot' }, msg.err || msg.ok) : null,
                 countdown > 0
@@ -7282,7 +7282,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
     /* ---------------------------------------------------------- 常驻面板主体 */
     /**
      * 「未读」状态：按靶标记在 localStorage 里，每 25 秒问一次 host 的 consoleDigest
-     * （每个页签的条数 + 最近更新时间）。比本地记住的快照新 → 该页签点红点；
+     * （每个页签的条数 + 最近更新时间）。比本地记住的快照新 -> 该页签点红点；
      * 用户点开那个页签就把当前值记成已读，红点消失。
      */
     const UNREAD_KEY = 'rt-unread:'
@@ -7585,7 +7585,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
         (full || embedded) ? null : h('div', { className: 'rt-resize-c', title: '拖动调整大小', onMouseDown: startResizeCorner }),
         h('div', { className: 'rt-head', onMouseDown: (full || embedded) ? undefined : startDrag, title: (full || embedded) ? undefined : '按住拖动面板' },
           embedded ? null : h('div', { className: 'rt-title' }, h('span', { className: 'rt-dot' }),
-            full ? '演练台 · 全面浏览' : '演练台',
+            full ? '演练台 | 全面浏览' : '演练台',
             full ? h('span', { className: 'rt-tag', style: { marginLeft: 6 } }, '独立窗口') : null),
           h('select', {
             className: 'rt-input rt-eng-select',
@@ -7636,7 +7636,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
           h('span', null, '被动/主动 ' + (stats.passiveSignals || 0) + '/' + (stats.activeSignals || 0)),
           h('div', { className: 'rt-spacer' }),
           full ? h('span', null, '按 Esc 或点右上角「退出全面浏览」回到带侧栏的界面') : null,
-          h('span', null, 'SQLite · ' + (snapshot && snapshot.engagement ? snapshot.engagement.name : ''))))
+          h('span', null, 'SQLite | ' + (snapshot && snapshot.engagement ? snapshot.engagement.name : ''))))
     }
 
     /* ---------------------------------------------------------- 入口按钮 */
@@ -7646,7 +7646,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
         className: 'rt-icon-btn' + (st.open ? ' on' : ''),
         title: 'RedTeam 控制台（常驻右侧栏）',
         onClick: () => setUI({ open: !st.open }),
-      }, h('span', { style: { fontSize: 14 } }, '⛨'), props.wide ? h('span', null, 'RedTeam') : null)
+      }, null, props.wide ? h('span', null, 'RedTeam') : null)
     }
 
     function HeaderButton() {
@@ -7655,7 +7655,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
         className: 'rt-hbtn' + (st.open ? ' on' : ''),
         title: 'RedTeam 控制台（常驻右侧栏）',
         onClick: () => setUI({ open: !st.open }),
-      }, '⛨ RedTeam')
+      }, 'RedTeam')
     }
 
     /** 侧栏「全面浏览」：在新浏览器窗口打开完整控制台（当前窗口不受影响）。 */
@@ -7667,7 +7667,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
         className: 'rt-icon-btn',
         title: '全面浏览：在新窗口打开完整控制台（当前窗口不受影响；新窗口内按 Esc 退出）',
         onClick: open,
-      }, h('span', { style: { fontSize: 14 } }, '⛶'), props.wide ? h('span', null, '全面浏览') : null)
+      }, null, props.wide ? h('span', null, '全面浏览') : null)
     }
 
     /* ---------------------------------------------------------- 插件入口 */
@@ -8140,11 +8140,11 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
 		}
 
 		/** 同步探测的占位：不再做同步 XHR（会卡 UI 主线程、Chrome 已逐步弃用）。
-		 * 调用方 mustBlockSubmit 在 cache 过期/缺失时按"未知→保守 block"处理,
+		 * 调用方 mustBlockSubmit 在 cache 过期/缺失时按"未知->保守 block"处理,
 		 * 同时 EnvAdaptSendGate 的 useEffect 轮询会异步 refresh,下次调用即可放行。 */
 		function fetchEnvAdaptStatusSync() { return null; }
 
-		/** 红队发送前门禁：未就绪 → 授权并打开环境适配；可确认跳过。 */
+		/** 红队发送前门禁：未就绪 -> 授权并打开环境适配；可确认跳过。 */
 		function EnvAdaptSendGate() {
 			const t = useT();
 			const [open, setOpen] = useState(false);
@@ -8166,7 +8166,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
 			const blockAndOpen = useCallback(() => {
 				setConfirmSkip(false);
 				refresh();
-				/* 第一次：只走完整授权窗 → 授权后进环境适配页 */
+				/* 第一次：只走完整授权窗 -> 授权后进环境适配页 */
 				if (!readDrillAuth()) {
 					setOpen(false);
 					requestDrillEnv();
@@ -8515,7 +8515,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
 						role: "tab",
 						"aria-selected": st.tab === "drill" ? "true" : "false",
 						onClick: () => onTab("drill"),
-					}, t("dock.drill") + (readDrillAuth() ? "" : " · " + t("dock.unauthorized"))),
+					}, t("dock.drill") + (readDrillAuth() ? "" : " | " + t("dock.unauthorized"))),
 				),
 				h("div", { className: "dshp-dock-body" }, body),
 				h("div", { className: "dshp-dock-resize-l", title: "拖动调整宽度", onMouseDown: startResizeLeft }),
@@ -8552,7 +8552,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
 			}, t("dock.newSession"));
 		}
 
-		/** 首页：模式旁挂「dsh-purge」→ 打开插件。红队模式走模式下拉（registry 声明）。 */
+		/** 首页：模式旁挂「dsh-purge」-> 打开插件。红队模式走模式下拉（registry 声明）。 */
 		function HeroNewSessionMount() {
 			const t = useT();
 			const st = useDock();
@@ -8665,7 +8665,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
 			const btn = h("button", {
 				type: "button",
 				className: "dshp-tab-btn" + (st.open ? " on" : ""),
-				title: st.open ? (t("dock.inSession") + " · 已开启") : (t("dock.inSession") + " · 点击打开"),
+				title: st.open ? (t("dock.inSession") + " | 已开启") : (t("dock.inSession") + " | 点击打开"),
 				onClick: () => toggleDock(),
 			}, t("dock.inSession"));
 			try {

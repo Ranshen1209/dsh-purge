@@ -27,7 +27,7 @@ function printStatus(state) {
   out.push(`  补丁 ${state.patches_applied}/${core.ALL_PATCHES.length} 已清洗, ${state.patches_pending} 待清洗`);
   for (const p of core.ALL_PATCHES) {
     const s = state.patch_status[p.id];
-    const mark = s === "applied" ? "✓" : s === "pending" ? "✗" : "·";
+    const mark = s === "applied" ? "通过" : s === "pending" ? "失败" : "-";
     out.push(`    ${mark} [#${String(p.id).padEnd(2)}] ${p.name.padEnd(30)} ${p.layer}/${p.layer_en} — ${s}`);
   }
   out.push("");
@@ -68,9 +68,9 @@ async function main() {
       preserveClientBundles: false,
       forApply: true,
     });
-    for (const h of hosts) console.log(`  宿主 / host → ${h.aiBase}`);
+    for (const h of hosts) console.log(`  宿主 / host -> ${h.aiBase}`);
     for (const r of report) {
-      const m = r.status === "applied" ? "✓ 已清洗" : r.status === "already" ? "- 已是最新" : r.status === "missing_file" ? "⚠ 文件缺失" : `✗ ${r.status}`;
+      const m = r.status === "applied" ? "已清洗" : r.status === "already" ? "- 已是最新" : r.status === "missing_file" ? "注意：文件缺失" : `失败 ${r.status}`;
       console.log(`  ${m} patch #${String(r.patch_id).padEnd(2)} ${r.name}`);
     }
     const flashHost = hosts[0]?.aiBase || state.ai_base;
@@ -85,27 +85,27 @@ async function main() {
     if (state.shim_dir) {
       const r = await core.patchShim(state.shim_dir);
       for (const [fname, st] of Object.entries(r)) {
-        if (st === "patched") console.log(`  ✓ shim ${fname} 注入 / injected`);
+        if (st === "patched") console.log(`  shim ${fname} 注入成功 / injected`);
         else if (st === "already_patched") console.log(`  - shim ${fname} 已注入 / already injected`);
         else if (st === "missing") console.log(`  - shim ${fname} 不存在 / missing`);
-        else console.log(`  ⚠ shim ${fname}: ${st}`);
+        else console.log(`  注意：shim ${fname}: ${st}`);
       }
     } else {
-      console.log("  ⚠ 未定位 shim 目录，跳过注入");
+      console.log("  注意：未定位 shim 目录，跳过注入");
     }
     console.log("");
     console.log("全部完成 / All done。重启 dsh 生效 / Restart dsh to take effect.");
   } else if (mode === "--revert") {
     if (state.ai_base || core.enumeratePatchAiBases().length) {
       const { reverted, errors } = await core.revertAllHosts();
-      for (const p of reverted) console.log(`  ✓ 已还原 / Reverted ${p}`);
-      for (const [p, e] of errors) console.log(`  ⚠ 还原失败 ${p}: ${e}`);
+      for (const p of reverted) console.log(`  已还原 / Reverted ${p}`);
+      for (const [p, e] of errors) console.log(`  注意：还原失败 ${p}: ${e}`);
       if (reverted.length === 0) console.log("  - 没有补丁备份可还原 / no patch backup");
     }
     if (state.shim_dir) {
       const r = await core.revertShim(state.shim_dir);
       for (const [fname, st] of Object.entries(r)) {
-        if (st === "reverted" || st === "stripped_inject") console.log(`  ✓ shim ${fname}: ${st}`);
+        if (st === "reverted" || st === "stripped_inject") console.log(`  shim ${fname} 已完成: ${st}`);
         else console.log(`  - shim ${fname}: ${st}`);
       }
     }
@@ -119,7 +119,7 @@ async function main() {
     else console.log("  未检测到已应用补丁，仍会清除插件文件。");
     if (result.override?.removed) console.log(`  已删除 ${result.override.path}`);
     if (result.stripped?.length) console.log(`  已从 profile 移除: ${result.stripped.join(", ")}`);
-    for (const e of result.errors || []) console.log(`  ⚠ ${e}`);
+    for (const e of result.errors || []) console.log(`  注意：${e}`);
     if (!result.ok) {
       console.log("  卸载中止：还原失败，插件文件未删除。");
       process.exit(1);
@@ -130,10 +130,10 @@ async function main() {
     const r = core.editOverride(state.dsh_home);
     if (!r.ok && r.needCreate) {
       await core.installOverride(state.dsh_home, true);
-      console.log(`  ✓ 已创建默认注入文件：${state.override_path}`);
+      console.log(`  已创建默认注入文件：${state.override_path}`);
       core.editOverride(state.dsh_home);
     } else {
-      console.log(`  → 已打开 ${r.editor} 编辑注入文件：${r.path}`);
+      console.log(`  -> 已打开 ${r.editor} 编辑注入文件：${r.path}`);
     }
     console.log("  编辑完成后重启 dsh 生效。");
   } else {

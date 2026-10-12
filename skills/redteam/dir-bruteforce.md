@@ -86,11 +86,11 @@ gobuster dir -u https://target -w /usr/share/seclists/Discovery/Web-Content/comm
 | 命中 | 下一步 |
 | --- | --- |
 | `/admin`、`/manage`、`/login`、后台路径 | 交给账号权限路线：默认口令/弱口令（技能 `credential-attack`） |
-| `.git/`、`.svn/`、`.env`、`config.php.bak`、`www.zip`、`web.rar` | **源码与配置泄露**：拉下来找数据库连接串、密钥、硬编码账号 → `redteam_credential_add` |
-| `swagger-ui.html`、`/v2/api-docs`、`/openapi.json` | 提取全量接口清单 → 未授权与越权探测（技能 `unauth-exploit`） |
+| `.git/`、`.svn/`、`.env`、`config.php.bak`、`www.zip`、`web.rar` | **源码与配置泄露**：拉下来找数据库连接串、密钥、硬编码账号 -> `redteam_credential_add` |
+| `swagger-ui.html`、`/v2/api-docs`、`/openapi.json` | 提取全量接口清单 -> 未授权与越权探测（技能 `unauth-exploit`） |
 | `actuator`、`druid`、`/console`、`/jmx` | 未授权监控台，常直通 RCE 或数据库 |
 | 上传点、导入、备份恢复、模板/报表设计 | 交给漏洞利用角色串 getshell 链 |
-| `.ssh/`、`id_rsa`、`*.pem`、`*.jks` | 私钥泄露 → 直接尝试登录（`ssh -i`） |
+| `.ssh/`、`id_rsa`、`*.pem`、`*.jks` | 私钥泄露 -> 直接尝试登录（`ssh -i`） |
 
 ## 降噪与自保
 
@@ -105,9 +105,9 @@ gobuster dir -u https://target -w /usr/share/seclists/Discovery/Web-Content/comm
 ## 输出与落库（强制）
 
 1. **隐藏路径本身不是得分项**，但**每个拿到东西的路径都要落库**：
-   - 找到后台/上传点/接口文档 → 记进该资产 `redteam_asset_test` 的 `surface`（追加式），交给漏洞发现/利用的下一个动作；
-   - 泄露源码/配置/密钥/凭据 → `redteam_credential_add`（`source=配置泄露`，`tool` 写路径与命令，明文写 `secret_value`）；
-   - 未授权可访问的接口/监控台 → 直接 `redteam_vuln_add`（含 `evidence` 回显）+ `redteam_http_evidence_add`。
+   - 找到后台/上传点/接口文档 -> 记进该资产 `redteam_asset_test` 的 `surface`（追加式），交给漏洞发现/利用的下一个动作；
+   - 泄露源码/配置/密钥/凭据 -> `redteam_credential_add`（`source=配置泄露`，`tool` 写路径与命令，明文写 `secret_value`）；
+   - 未授权可访问的接口/监控台 -> 直接 `redteam_vuln_add`（含 `evidence` 回显）+ `redteam_http_evidence_add`。
 2. 每个关键动作 `redteam_chain_add`：`stage_code=internet`（或 `internal`），
    `tool` 写实际命令原文（例如 `feroxbuster -u https://target -w raft-large-directories.txt -x php,zip,bak -d 3 --rate-limit 80`），
    `result` 写命中摘要（例如 `命中 /admin/、/backup/www.zip、/.env`）。

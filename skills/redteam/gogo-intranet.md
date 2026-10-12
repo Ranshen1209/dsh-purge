@@ -54,8 +54,8 @@ curl -o gogo http://<你的VPS_IP>:9100/gogo && chmod +x gogo
 gogo -P port        # 列出全部预设 tag 与对应端口
 ```
 
-常用 tag：`top1`(80,443,8080) · `top2`(数百个常见 Web/服务端口) · `top3` · `common`(内网常用) ·
-`win`(135,137,445,3389,winrm,oxid) · `db` · `http` · `docker` · `oracle` · `smb` · `all`(全集)
+常用 tag：`top1`(80,443,8080) | `top2`(数百个常见 Web/服务端口) | `top3` | `common`(内网常用) -
+`win`(135,137,445,3389,winrm,oxid) | `db` | `http` | `docker` | `oracle` | `smb` | `all`(全集)
 
 ```bash
 p 组合：-p top2,win,db          # 逗号任意组合
@@ -231,6 +231,6 @@ redteam_vuln_add       { engagement, target, name, severity, evidence_ref }   # 
 ## 相关技能
 
 - `fscan-intranet`：铺面之后的爆破与利用
-- `suo5-tunnel`：WebShell → SOCKS5，给 gogo 提供 `--proxy` 入口
+- `suo5-tunnel`：WebShell -> SOCKS5，给 gogo 提供 `--proxy` 入口
 - `vps-reverse-shell`：隧道与载荷投递
 - `web-fingerprint` / `asset-correlation`：把 gogo 的结果进一步关联成资产图谱

@@ -10,7 +10,7 @@ enabled: true
 
 免费代理不稳定，定位是**降低被封风险**而不是隐藏身份。关键目标优先用自有出口或 suo5 隧道。
 
-## ⛔ 铁规则：不许动本机的网络与代理配置
+## 铁规则：不许动本机的网络与代理配置
 
 使用代理**只允许在单条命令上临时指定**，任何情况下都不要修改本机配置。以下操作一律禁止：
 
@@ -37,7 +37,7 @@ ffuf -u https://target.example.com/api/FUZZ -w wordlist.txt -x "http://$P" -rate
 # 方式二：只对这条命令内联环境变量（不 export，进程结束即失效）
 http_proxy="http://$P" https_proxy="http://$P" curl -s --max-time 15 "https://target.example.com/"
 
-# 方式三：只支持原始 TCP 的工具 → 用 suo5 SOCKS5 隧道（技能 suo5-tunnel），
+# 方式三：只支持原始 TCP 的工具 -> 用 suo5 SOCKS5 隧道（技能 suo5-tunnel），
 #        不要为它去改系统代理；proxychains 用临时配置文件：
 proxychains4 -f runs/proxychains.tmp.conf -q nmap -sT -Pn -p 80,443 10.0.0.5
 ```

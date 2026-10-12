@@ -36,7 +36,7 @@ nuclei -u https://target.example.com -severity critical,high,medium -rl 30 -c 15
 nuclei -l runs/alive-urls.txt -severity critical,high -rl 50 -c 25 \
   -jsonl -o runs/nuclei-$(date +%m%d-%H%M).jsonl
 
-# 3) 指定模板（已知组件版本 → 精确打击，命中率高、噪声小）
+# 3) 指定模板（已知组件版本 -> 精确打击，命中率高、噪声小）
 nuclei -u http://target:8080 -t http/cves/2021/CVE-2021-44228.yaml
 nuclei -u http://target -t http/exposures/ -t http/default-logins/
 

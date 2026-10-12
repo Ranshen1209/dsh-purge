@@ -71,7 +71,7 @@ call close_session '{"action":"close_session","args":{},"session":"recon1"}'
 原始 CDP 透传（高级）：`{"action":"cdp","args":{"method":"Network.getAllCookies"}}`。
 
 ## 在红队流程里的用法
-- **接口发现**：打开站点 → `evaluate` 抓 resource timing + 页面内 JS 里的接口路径 → 把接口清单交给漏洞检测角色做越权/未授权测试。
+- **接口发现**：打开站点 -> `evaluate` 抓 resource timing + 页面内 JS 里的接口路径 -> 把接口清单交给漏洞检测角色做越权/未授权测试。
 - **登录态页面**：用户在浏览器里已登录的后台，可直接 `navigate` + `evaluate` 读取内容，无需重新登录。
 - **JS 渲染站点**：比 curl 更真实，能拿到 SPA 渲染后的 DOM。
 - 发现的 URL/标题照常写回 `redteam_asset_add`（`tool="kimi-webbridge"`）。
@@ -79,7 +79,7 @@ call close_session '{"action":"close_session","args":{},"session":"recon1"}'
 ## 限制（务必知道）
 - **无 headless**：必须有图形会话（本机 `DISPLAY=:10.0` 可用）。
 - 只支持 Chrome/Edge；跨域 iframe 不支持；`click`/`fill` 是合成事件，验证码/银行控件无效。
-- 扩展与守护进程版本强耦合：`status` 里 `update_available` 不为空就按上面的 systemd 停机 → `upgrade` → 启机流程升级守护进程；扩展由策略自动更新到最新版。
+- 扩展与守护进程版本强耦合：`status` 里 `update_available` 不为空就按上面的 systemd 停机 -> `upgrade` -> 启机流程升级守护进程；扩展由策略自动更新到最新版。
 - Linux 不在官方支持矩阵（能用但不保证）。
 
 ## 无扩展时的兜底

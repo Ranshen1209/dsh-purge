@@ -40,12 +40,12 @@ echo "连接密码 $PASS ｜ 密钥 $KEY"      # 两者都要写进 runs/ 与 re
 哥斯拉马（需要 GUI 时）：
 ```bash
 DISPLAY=:10.0 java -jar $DSH_HOME/redteam/toolkit/Godzilla/godzilla.jar
-# 管理 → 生成：载荷 java/jsp、加密器 Java_AES_BASE64、密码与密钥随机 → 生成后上传
+# 管理 -> 生成：载荷 java/jsp、加密器 Java_AES_BASE64、密码与密钥随机 -> 生成后上传
 ```
 
 ## 上传后必须验证"用户能连上"
-1. `curl -s -o /dev/null -w '%{http_code}' "https://target/upload/x.jsp"` → 预期 200（**不要用 GET 带 cmd 参数去测**，冰蝎/哥斯拉马不响应明文命令）。
-2. 用冰蝎或哥斯拉 GUI 新建连接（URL + 连接密码）点「测试连接」→ 通了才算成功；通了再用虚拟终端执行 `id/whoami`。
+1. `curl -s -o /dev/null -w '%{http_code}' "https://target/upload/x.jsp"` -> 预期 200（**不要用 GET 带 cmd 参数去测**，冰蝎/哥斯拉马不响应明文命令）。
+2. 用冰蝎或哥斯拉 GUI 新建连接（URL + 连接密码）点「测试连接」-> 通了才算成功；通了再用虚拟终端执行 `id/whoami`。
 3. 落库必须写全：`url`、`shell_type=behinder|godzilla`、`pass_key=连接密码`、`privilege`、`secret_ref`（证据文件）；随后**立刻建 suo5 隧道**（技能 `suo5-tunnel`）。
 
 ## 工具一览
@@ -65,7 +65,7 @@ DISPLAY=:10.0 java -jar $DSH_HOME/redteam/toolkit/Godzilla/godzilla.jar
 5. **维持与利用**：
    - 收集 `id/whoami/hostname/uname -a`、系统账号、内网 IP、路由。
    - **立刻用 suo5 起隧道进内网**（技能 `suo5-tunnel`，这是内网突破的标准通道）。
-   - 抓取敏感文件：`/etc/passwd`、配置、`.env`、源码、数据库连接串 → 存 `runs/`。
+   - 抓取敏感文件：`/etc/passwd`、配置、`.env`、源码、数据库连接串 -> 存 `runs/`。
 6. **落库**：
    - `redteam_webshell_add`（url / **shell_type** / **pass_key** / privilege / secret_ref）
    - `redteam_access_add`（host/账号/方式 webshell/权限/会话引用）
@@ -85,4 +85,4 @@ curl -s "https://target.example.com/upload/x.jsp?cmd=id"
 - 生成的 shell 只能上传到**本次授权演练的目标**；用完按需清理（删除文件、恢复原状）。
 - 工具 GUI 需要图形会话（`DISPLAY=:10.0` 可用）。
 - 凭据用 `redteam_credential_add` 落库：**明文写 `secret_value`**（面板直接显示，便于复用），同时把证据文件写 `runs/` 并在 `secret_ref` 里引用。资产库只在本机，别把库或导出内容带走。
-- 目标可能有 EDR/查杀：先测试 shell 是否存活，避免反复落地触发告警；落地失败就换语言/编码（JSP→JSPX→PHP）或换上传点。
+- 目标可能有 EDR/查杀：先测试 shell 是否存活，避免反复落地触发告警；落地失败就换语言/编码（JSP->JSPX->PHP）或换上传点。
