@@ -23,6 +23,7 @@ if (!client.includes('"dock.clean"')) {
 	client = client.replace(
 		'\t\t\tnav: "规则设定",',
 		`\t\t\tnav: "dsh-purge",
+			"dock.page": "Purge",
 			"dock.clean": "清洗",
 			"dock.drill": "演练台",
 			"dock.toggle": "dsh-purge",
@@ -47,6 +48,7 @@ if (!client.includes('"dock.clean"')) {
 	client = client.replace(
 		'\t\t\tnav: "Rules",',
 		`\t\t\tnav: "dsh-purge",
+			"dock.page": "Purge",
 			"dock.clean": "Clean",
 			"dock.drill": "Drill",
 			"dock.toggle": "dsh-purge",
@@ -124,6 +126,24 @@ if (!client.includes(".dshp-dock{")) {
 .dshp-icon-btn.on,.dshp-icon-btn:hover{background:var(--dsw-alias-interactive-bg-hover,rgba(127,127,127,.12));color:var(--dsw-alias-label-primary,currentColor)}
 .dshp-hbtn{appearance:none;border:0;background:transparent;color:var(--dsw-alias-label-secondary,currentColor);cursor:pointer;font:12px/1 inherit;padding:4px 8px;border-radius:8px}
 .dshp-hbtn.on,.dshp-hbtn:hover{background:var(--dsw-alias-interactive-bg-hover,rgba(127,127,127,.12));color:var(--dsw-alias-label-primary,currentColor)}
+/* 整页（conversation.view）：去掉 dock 的玻璃渐变/斜纹，隐藏一切改尺寸把手，字重收成一档 */
+.dshp-page{position:relative!important;inset:auto!important;left:auto!important;top:auto!important;right:auto!important;bottom:auto!important;width:100%!important;height:100%!important;min-width:0!important;min-height:0!important;max-width:none!important;max-height:none!important;border:0!important;border-radius:0!important;box-shadow:none!important;background:transparent!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;z-index:auto;overflow:hidden}
+.dshp-page .dshp-dock-head{cursor:default;border-radius:0;background:transparent!important}
+.dshp-page .dshp-dock-body{border-radius:0;min-height:0}
+.dshp-dock.dshp-page[data-theme]{background:none!important;background-image:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;border:0!important;box-shadow:none!important;border-radius:0!important}
+.dshp-dock.dshp-page[data-theme="white"]{--dshp-ink:var(--dsw-alias-label-primary,#16140f);--dshp-mute:color-mix(in srgb,var(--dsw-alias-label-primary,#16140f) 76%,var(--dsw-alias-label-secondary,#3c362e))}
+.dshp-dock.dshp-page[data-theme="dusk"]{--dshp-ink:var(--dsw-alias-label-primary,#f4f1ea);--dshp-mute:color-mix(in srgb,var(--dsw-alias-label-primary,#f4f1ea) 84%,var(--dsw-alias-label-secondary,#c9c3b8))}
+.dshp-dock.dshp-page[data-theme] .dshp-dock-resize,.dshp-dock.dshp-page[data-theme] .dshp-dock-resize-l,.dshp-dock.dshp-page[data-theme] .dshp-dock-resize-r,.dshp-dock.dshp-page[data-theme] .dshp-dock-resize-b,
+.dshp-dock.dshp-page[data-theme] [title*="拖动"],
+.dshp-dock.dshp-page[data-theme] .rt-grip,.dshp-dock.dshp-page[data-theme] .rt-resize,.dshp-dock.dshp-page[data-theme] .rt-resize-r,.dshp-dock.dshp-page[data-theme] .rt-resize-b,.dshp-dock.dshp-page[data-theme] .rt-resize-c{display:none!important}
+.dshp-dock.dshp-page[data-theme] textarea{resize:none!important}
+/* 整页：字体族与字重都拉平（标题原走衬线、标签原走等宽），并压掉组件内联 fontWeight */
+.dshp-dock.dshp-page[data-theme] *{font-weight:500!important}
+.dshp-dock.dshp-page[data-theme] *:not(pre):not(code):not(kbd):not(samp){font-family:inherit!important}
+.dshp-dock.dshp-page[data-theme] :is(pre,code,kbd,samp){font-family:ui-monospace,Menlo,Consolas,monospace!important}
+/* 两个页签常驻内存，只切显隐：切页不重挂载，不重新取数，视觉不闪 */
+.dshp-pane{display:none;flex:1;min-height:0;flex-direction:column;overflow:auto}
+.dshp-pane[data-on="1"]{display:flex}
 `;
 	// Find end of PURGE_CSS - the backtick after Rewind starts at REWIND_CSS
 	const purgeCssEnd = client.indexOf("\t\tconst REWIND_CSS");
@@ -411,11 +431,19 @@ const newApply = `		function apply(ctx) {
 			ctx.effect(() => ctx.locale.register(NS, { zh, en }), "dsh-purge: dictionaries");
 			const t = ctx.locale.bind(NS);
 			translate = t;
+			ctx.slots.inject("conversation.view", () => ctx.slots.register({
+				name: "conversation.view",
+				id: "dsh-purge",
+				order: 20,
+				locale: NS,
+				label: () => t("dock.page"),
+				inject: () => ({ t }),
+			}, PurgePage));
 			ctx.slots.inject("shell.overlay", () => ctx.slots.register({
 				name: "shell.overlay",
 				id: "dsh-purge-dock",
 				order: 50,
-			}, () => h(react.Fragment, null, h(PurgeDock), h(HeroNewSessionMount), h(TabRowPurgeMount), h(EnvAdaptSendGate))));
+			}, () => h(react.Fragment, null, h(WelcomeNotice), h(EnvAdaptSendGate))));
 			try {
 				if (typeof ctx.inject === "function") {
 					ctx.inject(["sessions", "uiWorkspace", "workspaces", "conversation"], (host) => installRewindUi(host));
